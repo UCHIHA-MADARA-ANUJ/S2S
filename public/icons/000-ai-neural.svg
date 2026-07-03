@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+    <defs>
+      <linearGradient id="g0" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6366F1"/>
+        <stop offset="100%" stop-color="#8B5CF6"/>
+      </linearGradient>
+      <radialGradient id="glow0" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="256" height="256" fill="#030712"/>
+    <circle cx="128" cy="128" r="120" fill="url(#glow0)"/>
+    <polygon points="128,38 206,83 206,173 128,218 50,173 50,83" fill="url(#g0)" opacity="0.85"/><polygon points="128,68 180,98 180,158 128,188 76,158 76,98" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+    <text x="128" y="238" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white" text-anchor="middle" opacity="0.7">neural</text>
+  </svg>

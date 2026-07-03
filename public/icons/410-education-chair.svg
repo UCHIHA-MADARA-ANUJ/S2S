@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+    <defs>
+      <linearGradient id="g410" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#10B981"/>
+        <stop offset="100%" stop-color="#14B8A6"/>
+      </linearGradient>
+      <radialGradient id="glow410" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#6EE7B7" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#6EE7B7" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="256" height="256" fill="#030712"/>
+    <circle cx="128" cy="128" r="120" fill="url(#glow410)"/>
+    <polygon points="128,38 208,188 48,188" fill="url(#g410)" opacity="0.85"/><polygon points="128,78 173,163 83,163" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+    <text x="128" y="238" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white" text-anchor="middle" opacity="0.7">chair</text>
+  </svg>

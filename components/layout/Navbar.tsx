@@ -11,6 +11,7 @@ const links = [
   { href: "/research", label: "Research" },
   { href: "/ai-hub", label: "AI Hub" },
   { href: "/survey", label: "Survey" },
+  { href: "/showcase", label: "FX" },
   { href: "/team", label: "Team" }
 ];
 

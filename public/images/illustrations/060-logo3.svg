@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+      <rect width="1000" height="1000" fill="#050505"/>
+      <rect x="300" y="300" width="400" height="400" fill="none" stroke="#00E1FF" stroke-width="20" transform="rotate(45 500 500)"/>
+      <rect x="350" y="350" width="300" height="300" fill="#FF3D2E" transform="rotate(45 500 500)"/>
+      <text x="500" y="520" text-anchor="middle" font-size="60" fill="#F5F5F5" font-weight="900" font-family="Arial">SV</text>
+    </svg>

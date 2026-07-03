@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+    <defs>
+      <linearGradient id="g123" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F59E0B"/>
+        <stop offset="100%" stop-color="#EF4444"/>
+      </linearGradient>
+      <radialGradient id="glow123" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#FCD34D" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="256" height="256" fill="#030712"/>
+    <circle cx="128" cy="128" r="120" fill="url(#glow123)"/>
+    <circle cx="128" cy="128" r="80" fill="url(#g123)" opacity="0.6"/><circle cx="103" cy="118" r="40" fill="url(#g123)" opacity="0.8"/><circle cx="153" cy="138" r="40" fill="url(#g123)" opacity="0.9"/>
+    <text x="128" y="238" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white" text-anchor="middle" opacity="0.7">onedrive</text>
+  </svg>

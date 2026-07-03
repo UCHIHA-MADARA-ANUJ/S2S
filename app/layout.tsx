@@ -8,6 +8,8 @@ import { LenisProvider } from "@/components/layout/LenisProvider";
 import { GlobalFx } from "@/components/layout/GlobalFx";
 import { CustomCursor } from "@/components/effects/CustomCursor";
 import { GSAPReveal } from "@/components/animations/GSAPReveal";
+import { PixelTrail } from "@/components/effects/PixelTrail";
+import { ClickSpark } from "@/components/effects/ClickSpark";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
@@ -33,6 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <GlobalFx />
           <GSAPReveal />
           <CustomCursor />
+          <PixelTrail gridSize={20} trailSize={12} color="rgba(139, 92, 246, 0.6)" />
+          <ClickSpark sparkColor="#A78BFA" sparkCount={10} sparkRadius={18} />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />

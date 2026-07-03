@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A3A3A" stroke-width="8"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#FF3D2E" stroke-width="8" stroke-dasharray="150 400" transform="rotate(-90 100 100)"/>
+    <text x="100" y="110" text-anchor="middle" font-size="24" fill="#F5F5F5" font-weight="900" font-family="Arial">SV</text>
+  </svg>
