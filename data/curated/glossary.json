@@ -1,0 +1,42 @@
+[
+  {
+    "term": "Screen Time",
+    "def": "Total time spent on digital devices (phone, laptop, tablet, TV) per day."
+  },
+  {
+    "term": "Skill Acquisition",
+    "def": "The process of gaining proficiency in a new ability through practice and learning."
+  },
+  {
+    "term": "Active Consumption",
+    "def": "Engaging with content purposefully (taking notes, practicing, applying), as opposed to passive consumption (scrolling, watching without engagement)."
+  },
+  {
+    "term": "AI Tool",
+    "def": "Software powered by artificial intelligence that assists with tasks like writing, coding, analysis, and creation."
+  },
+  {
+    "term": "Self-Directed Learning",
+    "def": "Education where the learner chooses what, when, and how to learn, often outside formal institutions."
+  },
+  {
+    "term": "Microlearning",
+    "def": "Bite-sized learning units, typically 5-15 minutes, optimized for attention and retention."
+  },
+  {
+    "term": "Doomscrolling",
+    "def": "The habit of continuously scrolling through negative or trivial content, often unconsciously."
+  },
+  {
+    "term": "Prompt Engineering",
+    "def": "The skill of crafting effective inputs for AI systems to get desired outputs."
+  },
+  {
+    "term": "Digital Wellness",
+    "def": "Maintaining a healthy relationship with technology, balancing screen time with physical and mental health."
+  },
+  {
+    "term": "Skill Pathway",
+    "def": "A structured plan of learning resources and milestones to develop a specific skill over time."
+  }
+]

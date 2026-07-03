@@ -1,0 +1,54 @@
+[
+  {
+    "date": "2026-01-15",
+    "event": "SkillVerse project conceived by Anuj Phulera"
+  },
+  {
+    "date": "2026-01-22",
+    "event": "Team formed: Anuj (lead), Aarav (ideator), Dhun & Preksha (presenters)"
+  },
+  {
+    "date": "2026-02-01",
+    "event": "Survey design and pilot testing"
+  },
+  {
+    "date": "2026-02-15",
+    "event": "First 50 survey responses collected"
+  },
+  {
+    "date": "2026-03-01",
+    "event": "Database setup with Supabase"
+  },
+  {
+    "date": "2026-03-15",
+    "event": "AI integration with Gemini begins"
+  },
+  {
+    "date": "2026-04-01",
+    "event": "Dashboard v1 launched"
+  },
+  {
+    "date": "2026-04-15",
+    "event": "Reached 100+ responses"
+  },
+  {
+    "date": "2026-05-01",
+    "event": "8 AI features built"
+  },
+  {
+    "date": "2026-05-15",
+    "event": "150+ responses, full data analysis"
+  },
+  {
+    "date": "2026-06-01",
+    "event": "Premium UI upgrade with custom effects"
+  },
+  {
+    "date": "2026-06-15",
+    "event": "30+ research reports generated"
+  },
+  {
+    "date": "2026-07-01",
+    "event": "Production deployment to Vercel"
+  }
+]

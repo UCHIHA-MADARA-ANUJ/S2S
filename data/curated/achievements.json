@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "First Survey",
+    "desc": "Complete your first SkillVerse survey",
+    "icon": "ClipboardCheck",
+    "rarity": "common"
+  },
+  {
+    "id": 2,
+    "title": "Skill Sharer",
+    "desc": "Share your learning path with the community",
+    "icon": "Share2",
+    "rarity": "common"
+  },
+  {
+    "id": 3,
+    "title": "AI Pioneer",
+    "desc": "Use 5 different AI features",
+    "icon": "Sparkles",
+    "rarity": "rare"
+  },
+  {
+    "id": 4,
+    "title": "Data Contributor",
+    "desc": "Submit to all 8 steps of the survey",
+    "icon": "Database",
+    "rarity": "rare"
+  },
+  {
+    "id": 5,
+    "title": "Skill Builder",
+    "desc": "Generate a 4-week learning pathway",
+    "icon": "Target",
+    "rarity": "rare"
+  },
+  {
+    "id": 6,
+    "title": "Wellness Warrior",
+    "desc": "Complete the wellness analysis 3 times",
+    "icon": "Heart",
+    "rarity": "epic"
+  },
+  {
+    "id": 7,
+    "title": "Trend Spotter",
+    "desc": "Predict a rising digital learning trend correctly",
+    "icon": "TrendingUp",
+    "rarity": "epic"
+  },
+  {
+    "id": 8,
+    "title": "Multi-Linguist",
+    "desc": "Translate insights to 3+ languages",
+    "icon": "Languages",
+    "rarity": "epic"
+  },
+  {
+    "id": 9,
+    "title": "Report Master",
+    "desc": "Generate 5 AI research reports",
+    "icon": "FileText",
+    "rarity": "legendary"
+  },
+  {
+    "id": 10,
+    "title": "SkillVerse Champion",
+    "desc": "Use every feature and submit a pledge",
+    "icon": "Trophy",
+    "rarity": "legendary"
+  }
+]

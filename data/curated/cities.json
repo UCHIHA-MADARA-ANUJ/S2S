@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Mumbai",
+    "state": "Maharashtra",
+    "responses": 18,
+    "avgScreenTime": 5.2,
+    "topPlatform": "Instagram"
+  },
+  {
+    "name": "Delhi",
+    "state": "Delhi",
+    "responses": 22,
+    "avgScreenTime": 4.9,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Bengaluru",
+    "state": "Karnataka",
+    "responses": 16,
+    "avgScreenTime": 5.4,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Gurugram",
+    "state": "Haryana",
+    "responses": 25,
+    "avgScreenTime": 4.7,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Hyderabad",
+    "state": "Telangana",
+    "responses": 12,
+    "avgScreenTime": 4.8,
+    "topPlatform": "Instagram"
+  },
+  {
+    "name": "Pune",
+    "state": "Maharashtra",
+    "responses": 10,
+    "avgScreenTime": 4.5,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "responses": 9,
+    "avgScreenTime": 4.3,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Kolkata",
+    "state": "West Bengal",
+    "responses": 8,
+    "avgScreenTime": 4.1,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Ahmedabad",
+    "state": "Gujarat",
+    "responses": 7,
+    "avgScreenTime": 4,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Jaipur",
+    "state": "Rajasthan",
+    "responses": 6,
+    "avgScreenTime": 3.9,
+    "topPlatform": "Instagram"
+  },
+  {
+    "name": "Lucknow",
+    "state": "Uttar Pradesh",
+    "responses": 5,
+    "avgScreenTime": 3.8,
+    "topPlatform": "YouTube"
+  },
+  {
+    "name": "Chandigarh",
+    "state": "Chandigarh",
+    "responses": 7,
+    "avgScreenTime": 4.6,
+    "topPlatform": "YouTube"
+  }
+]

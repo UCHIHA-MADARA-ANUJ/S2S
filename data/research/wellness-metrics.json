@@ -1,0 +1,37 @@
+{
+  "eyeStrain": {
+    "affected": 34,
+    "severity": {
+      "mild": 18,
+      "moderate": 12,
+      "severe": 4
+    }
+  },
+  "sleepImpact": {
+    "affected": 47,
+    "avgReductionHours": 0.8
+  },
+  "anxiety": {
+    "affected": 23,
+    "triggers": [
+      "social_comparison: 35%",
+      "FOMO: 28%",
+      "cyberbullying: 8%",
+      "other: 29%"
+    ]
+  },
+  "posture": {
+    "affected": 41,
+    "avgSittingHours": 4.2
+  },
+  "outdoorTime": {
+    "avgMinutesPerDay": 78,
+    "target": 90,
+    "deficit": 12
+  },
+  "hydration": {
+    "avgGlassesPerDay": 4.2,
+    "target": 8,
+    "deficit": 3.8
+  }
+}

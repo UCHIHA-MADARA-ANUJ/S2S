@@ -1,0 +1,78 @@
+{
+  "video": [
+    "YouTube",
+    "TikTok",
+    "Netflix",
+    "Twitch",
+    "Vimeo",
+    "Instagram Reels"
+  ],
+  "social": [
+    "Instagram",
+    "Snapchat",
+    "Twitter",
+    "LinkedIn",
+    "Facebook",
+    "Pinterest"
+  ],
+  "community": [
+    "Discord",
+    "Reddit",
+    "Slack",
+    "Telegram",
+    "WhatsApp",
+    "Clubhouse"
+  ],
+  "education": [
+    "Khan Academy",
+    "Coursera",
+    "Udemy",
+    "edX",
+    "Duolingo",
+    "Codecademy",
+    "Brilliant",
+    "Skillshare"
+  ],
+  "developer": [
+    "GitHub",
+    "GitLab",
+    "Stack Overflow",
+    "CodePen",
+    "Replit",
+    "Glitch"
+  ],
+  "design": [
+    "Canva",
+    "Figma",
+    "Adobe Creative Suite",
+    "Sketch",
+    "InVision",
+    "Framer"
+  ],
+  "ai": [
+    "ChatGPT",
+    "Google Gemini",
+    "Microsoft Copilot",
+    "Midjourney",
+    "DALL-E",
+    "Stable Diffusion",
+    "Claude",
+    "Perplexity"
+  ],
+  "productivity": [
+    "Notion",
+    "Google Workspace",
+    "Microsoft 365",
+    "Trello",
+    "Asana",
+    "Obsidian"
+  ],
+  "audio": [
+    "Spotify",
+    "Apple Music",
+    "SoundCloud",
+    "Anchor",
+    "Audacity",
+    "GarageBand"
+  ]
+}

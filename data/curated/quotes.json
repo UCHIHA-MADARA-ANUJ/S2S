@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "text": "Screens are tools. Like any tool, they amplify your intentions.",
+    "author": "Anuj Phulera, SkillVerse Lead",
+    "category": "philosophy"
+  },
+  {
+    "id": 2,
+    "text": "I learned to code from YouTube at 14. Now I'm building apps for my school.",
+    "author": "Anonymous student, age 16",
+    "category": "success"
+  },
+  {
+    "id": 3,
+    "text": "AI doesn't replace teachers. It frees them to teach what matters.",
+    "author": "Aarav Choudhary, SkillVerse Ideator",
+    "category": "ai"
+  },
+  {
+    "id": 4,
+    "text": "The best skill is the one you'll actually practice. Start with curiosity.",
+    "author": "Anuj Phulera",
+    "category": "motivation"
+  },
+  {
+    "id": 5,
+    "text": "Every hour on YouTube is a choice: passive or active. Choose actively.",
+    "author": "SkillVerse team",
+    "category": "philosophy"
+  },
+  {
+    "id": 6,
+    "text": "Discord taught me more about software engineering than any class.",
+    "author": "Anonymous student, age 17",
+    "category": "success"
+  },
+  {
+    "id": 7,
+    "text": "Our data shows: most 'wasted' screen time is actually exploration.",
+    "author": "SkillVerse research",
+    "category": "data"
+  },
+  {
+    "id": 8,
+    "text": "From Screens to Skills isn't a tagline. It's a measurement framework.",
+    "author": "Anuj Phulera",
+    "category": "philosophy"
+  },
+  {
+    "id": 9,
+    "text": "I built a business from a TikTok tutorial. Made my first ₹10k at 15.",
+    "author": "Anonymous student, age 15",
+    "category": "success"
+  },
+  {
+    "id": 10,
+    "text": "The future of education is personalized, project-based, and online.",
+    "author": "Dhun, Presenter",
+    "category": "future"
+  },
+  {
+    "id": 11,
+    "text": "Parents worry about screen time. They should focus on screen content.",
+    "author": "Preksha, Presenter",
+    "category": "philosophy"
+  },
+  {
+    "id": 12,
+    "text": "ChatGPT is the new calculator. Universal tool for universal problem-solving.",
+    "author": "Anuj Phulera",
+    "category": "ai"
+  },
+  {
+    "id": 13,
+    "text": "Skill is just consistency over time. The internet gives us both.",
+    "author": "SkillVerse team",
+    "category": "motivation"
+  },
+  {
+    "id": 14,
+    "text": "What if every student could measure their growth like athletes do?",
+    "author": "Aarav Choudhary",
+    "category": "philosophy"
+  },
+  {
+    "id": 15,
+    "text": "The screen is a portal. What's on the other side depends on you.",
+    "author": "Anuj Phulera",
+    "category": "philosophy"
+  }
+]

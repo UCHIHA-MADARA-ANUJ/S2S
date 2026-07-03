@@ -1,0 +1,193 @@
+[
+  {
+    "name": "YouTube",
+    "category": "video",
+    "users": 82,
+    "primaryUse": "learning",
+    "topSkills": [
+      "video-editing",
+      "coding",
+      "music",
+      "photography"
+    ],
+    "ageMin": 8,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "Instagram",
+    "category": "social",
+    "users": 71,
+    "primaryUse": "inspiration",
+    "topSkills": [
+      "photography",
+      "design",
+      "marketing"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "low"
+  },
+  {
+    "name": "Discord",
+    "category": "community",
+    "users": 28,
+    "primaryUse": "collaboration",
+    "topSkills": [
+      "coding",
+      "community-management",
+      "gaming"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "medium"
+  },
+  {
+    "name": "Khan Academy",
+    "category": "education",
+    "users": 34,
+    "primaryUse": "academic",
+    "topSkills": [
+      "math",
+      "science",
+      "programming"
+    ],
+    "ageMin": 8,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "Duolingo",
+    "category": "language",
+    "users": 24,
+    "primaryUse": "language",
+    "topSkills": [
+      "languages"
+    ],
+    "ageMin": 8,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "Coursera",
+    "category": "education",
+    "users": 18,
+    "primaryUse": "certification",
+    "topSkills": [
+      "business",
+      "data-science",
+      "cs"
+    ],
+    "ageMin": 16,
+    "aiIntegration": "medium"
+  },
+  {
+    "name": "GitHub",
+    "category": "developer",
+    "users": 12,
+    "primaryUse": "building",
+    "topSkills": [
+      "coding",
+      "open-source",
+      "collaboration"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "Canva",
+    "category": "design",
+    "users": 38,
+    "primaryUse": "creation",
+    "topSkills": [
+      "graphic-design",
+      "marketing",
+      "presentations"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "ChatGPT",
+    "category": "ai",
+    "users": 45,
+    "primaryUse": "assistance",
+    "topSkills": [
+      "writing",
+      "research",
+      "coding",
+      "analysis"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "core"
+  },
+  {
+    "name": "WhatsApp",
+    "category": "communication",
+    "users": 89,
+    "primaryUse": "communication",
+    "topSkills": [
+      "communication",
+      "collaboration"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "low"
+  },
+  {
+    "name": "TikTok",
+    "category": "video",
+    "users": 64,
+    "primaryUse": "entertainment",
+    "topSkills": [
+      "video-editing",
+      "dancing",
+      "storytelling"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "medium"
+  },
+  {
+    "name": "Reddit",
+    "category": "community",
+    "users": 19,
+    "primaryUse": "discussion",
+    "topSkills": [
+      "research",
+      "writing",
+      "humor"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "low"
+  },
+  {
+    "name": "Spotify",
+    "category": "audio",
+    "users": 52,
+    "primaryUse": "entertainment",
+    "topSkills": [
+      "music-discovery"
+    ],
+    "ageMin": 13,
+    "aiIntegration": "high"
+  },
+  {
+    "name": "Udemy",
+    "category": "education",
+    "users": 15,
+    "primaryUse": "certification",
+    "topSkills": [
+      "business",
+      "design",
+      "tech"
+    ],
+    "ageMin": 16,
+    "aiIntegration": "medium"
+  },
+  {
+    "name": "Medium",
+    "category": "reading",
+    "users": 8,
+    "primaryUse": "reading",
+    "topSkills": [
+      "writing",
+      "research"
+    ],
+    "ageMin": 16,
+    "aiIntegration": "low"
+  }
+]

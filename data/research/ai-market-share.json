@@ -1,0 +1,50 @@
+[
+  {
+    "tool": "ChatGPT",
+    "share": 71,
+    "change": 0,
+    "color": "#10A37F"
+  },
+  {
+    "tool": "Google Gemini",
+    "share": 24,
+    "change": 8,
+    "color": "#8E75F9"
+  },
+  {
+    "tool": "Microsoft Copilot",
+    "share": 12,
+    "change": 4,
+    "color": "#0078D4"
+  },
+  {
+    "tool": "Midjourney",
+    "share": 5,
+    "change": 1,
+    "color": "#8B5CF6"
+  },
+  {
+    "tool": "GitHub Copilot",
+    "share": 8,
+    "change": 3,
+    "color": "#0F0F0F"
+  },
+  {
+    "tool": "Claude",
+    "share": 3,
+    "change": 2,
+    "color": "#D97757"
+  },
+  {
+    "tool": "Perplexity",
+    "share": 2,
+    "change": 1,
+    "color": "#1FB8CD"
+  },
+  {
+    "tool": "Other",
+    "share": 4,
+    "change": 0,
+    "color": "#94A3B8"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "state": "Maharashtra",
+    "responses": 28,
+    "avgScreen": 5,
+    "topPlatform": "YouTube",
+    "tier": "high"
+  },
+  {
+    "state": "Delhi",
+    "responses": 22,
+    "avgScreen": 4.9,
+    "topPlatform": "YouTube",
+    "tier": "high"
+  },
+  {
+    "state": "Karnataka",
+    "responses": 16,
+    "avgScreen": 5.4,
+    "topPlatform": "YouTube",
+    "tier": "high"
+  },
+  {
+    "state": "Haryana",
+    "responses": 25,
+    "avgScreen": 4.7,
+    "topPlatform": "YouTube",
+    "tier": "high"
+  },
+  {
+    "state": "Telangana",
+    "responses": 12,
+    "avgScreen": 4.8,
+    "topPlatform": "Instagram",
+    "tier": "medium"
+  },
+  {
+    "state": "Tamil Nadu",
+    "responses": 9,
+    "avgScreen": 4.3,
+    "topPlatform": "YouTube",
+    "tier": "medium"
+  },
+  {
+    "state": "West Bengal",
+    "responses": 8,
+    "avgScreen": 4.1,
+    "topPlatform": "YouTube",
+    "tier": "medium"
+  },
+  {
+    "state": "Gujarat",
+    "responses": 7,
+    "avgScreen": 4,
+    "topPlatform": "YouTube",
+    "tier": "medium"
+  },
+  {
+    "state": "Rajasthan",
+    "responses": 6,
+    "avgScreen": 3.9,
+    "topPlatform": "Instagram",
+    "tier": "low"
+  },
+  {
+    "state": "Uttar Pradesh",
+    "responses": 5,
+    "avgScreen": 3.8,
+    "topPlatform": "YouTube",
+    "tier": "low"
+  },
+  {
+    "state": "Punjab",
+    "responses": 7,
+    "avgScreen": 4.6,
+    "topPlatform": "YouTube",
+    "tier": "medium"
+  },
+  {
+    "state": "Kerala",
+    "responses": 4,
+    "avgScreen": 4.4,
+    "topPlatform": "YouTube",
+    "tier": "low"
+  }
+]

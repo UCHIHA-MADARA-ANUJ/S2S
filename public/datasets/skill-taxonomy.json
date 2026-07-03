@@ -1,0 +1,45 @@
+{
+  "technical": [
+    "Coding / Programming",
+    "Data Analysis",
+    "3D Modeling",
+    "AI / Prompt Engineering",
+    "DevOps",
+    "Cloud Computing",
+    "Cybersecurity"
+  ],
+  "creative": [
+    "Video Editing",
+    "Graphic Design",
+    "Music Production",
+    "Photography",
+    "Writing / Blogging",
+    "Animation",
+    "Illustration",
+    "UI/UX Design"
+  ],
+  "cognitive": [
+    "Language Learning",
+    "Math",
+    "Science",
+    "Research Skills",
+    "Critical Thinking",
+    "Problem Solving"
+  ],
+  "business": [
+    "Entrepreneurship",
+    "Marketing",
+    "Sales",
+    "Product Management",
+    "Public Speaking",
+    "Leadership"
+  ],
+  "soft": [
+    "Communication",
+    "Collaboration / Teamwork",
+    "Productivity / Time Management",
+    "Public Speaking",
+    "Leadership",
+    "Empathy"
+  ]
+}

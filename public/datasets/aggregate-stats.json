@@ -1,0 +1,37 @@
+{
+  "totalResponses": 2000,
+  "avgAge": 16.5,
+  "genderBreakdown": {
+    "Male": 674,
+    "Non-binary": 645,
+    "Female": 681
+  },
+  "avgScreenTime": 5.02,
+  "avgEducationalPercent": 55.3,
+  "aiUsageRate": 64.3,
+  "cityBreakdown": {
+    "Lucknow": 140,
+    "Delhi": 126,
+    "Ahmedabad": 141,
+    "Mumbai": 127,
+    "Bengaluru": 122,
+    "Pune": 169,
+    "Chandigarh": 130,
+    "Visakhapatnam": 143,
+    "Chennai": 137,
+    "Kochi": 127,
+    "Jaipur": 135,
+    "Gurugram": 122,
+    "Kolkata": 126,
+    "Hyderabad": 123,
+    "Indore": 132
+  },
+  "deviceBreakdown": {
+    "Television": 387,
+    "Desktop": 383,
+    "Tablet": 408,
+    "Laptop": 400,
+    "Smartphone": 422
+  },
+  "positiveImpactRate": 37.8
+}

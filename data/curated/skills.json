@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Coding / Programming",
+    "category": "technical",
+    "avgHoursToBasic": 120,
+    "avgHoursToPro": 2000,
+    "earnersPct": 34,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 25000
+  },
+  {
+    "name": "Video Editing",
+    "category": "creative",
+    "avgHoursToBasic": 40,
+    "avgHoursToPro": 1500,
+    "earnersPct": 18,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 12000
+  },
+  {
+    "name": "Graphic Design",
+    "category": "creative",
+    "avgHoursToBasic": 60,
+    "avgHoursToPro": 2000,
+    "earnersPct": 15,
+    "topPlatform": "Canva",
+    "avgFirstEarning": 8000
+  },
+  {
+    "name": "Language Learning",
+    "category": "cognitive",
+    "avgHoursToBasic": 200,
+    "avgHoursToPro": 3000,
+    "earnersPct": 5,
+    "topPlatform": "Duolingo",
+    "avgFirstEarning": 0
+  },
+  {
+    "name": "Writing / Blogging",
+    "category": "creative",
+    "avgHoursToBasic": 100,
+    "avgHoursToPro": 2000,
+    "earnersPct": 12,
+    "topPlatform": "Medium",
+    "avgFirstEarning": 6000
+  },
+  {
+    "name": "Music Production",
+    "category": "creative",
+    "avgHoursToBasic": 150,
+    "avgHoursToPro": 3000,
+    "earnersPct": 8,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 5000
+  },
+  {
+    "name": "Photography",
+    "category": "creative",
+    "avgHoursToBasic": 80,
+    "avgHoursToPro": 1500,
+    "earnersPct": 10,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 7000
+  },
+  {
+    "name": "3D Modeling",
+    "category": "technical",
+    "avgHoursToBasic": 200,
+    "avgHoursToPro": 2500,
+    "earnersPct": 6,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 10000
+  },
+  {
+    "name": "AI / Prompt Engineering",
+    "category": "technical",
+    "avgHoursToBasic": 30,
+    "avgHoursToPro": 500,
+    "earnersPct": 22,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 15000
+  },
+  {
+    "name": "Public Speaking",
+    "category": "soft",
+    "avgHoursToBasic": 100,
+    "avgHoursToPro": 1500,
+    "earnersPct": 8,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 5000
+  },
+  {
+    "name": "Data Analysis",
+    "category": "technical",
+    "avgHoursToBasic": 150,
+    "avgHoursToPro": 2500,
+    "earnersPct": 18,
+    "topPlatform": "Coursera",
+    "avgFirstEarning": 18000
+  },
+  {
+    "name": "Marketing",
+    "category": "business",
+    "avgHoursToBasic": 80,
+    "avgHoursToPro": 1500,
+    "earnersPct": 14,
+    "topPlatform": "YouTube",
+    "avgFirstEarning": 9000
+  },
+  {
+    "name": "Mathematics",
+    "category": "cognitive",
+    "avgHoursToBasic": 200,
+    "avgHoursToPro": 3000,
+    "earnersPct": 4,
+    "topPlatform": "Khan Academy",
+    "avgFirstEarning": 0
+  },
+  {
+    "name": "Science",
+    "category": "cognitive",
+    "avgHoursToBasic": 200,
+    "avgHoursToPro": 3000,
+    "earnersPct": 3,
+    "topPlatform": "Khan Academy",
+    "avgFirstEarning": 0
+  }
+]

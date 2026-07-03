@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "category": "platform",
+    "text": "YouTube is the #1 learning platform, with 82% of students using it for self-directed learning.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 2,
+    "category": "skill",
+    "text": "Coding is the most-learned skill online, with 43% of students acquiring it through self-study.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 3,
+    "category": "ai",
+    "text": "64% of students use AI tools, with 89% reporting improved learning outcomes.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 4,
+    "category": "wellness",
+    "text": "Only 23% of students report negative mental health impacts from screen time.",
+    "impact": "medium",
+    "source": "survey-2026"
+  },
+  {
+    "id": 5,
+    "category": "screen-time",
+    "text": "Average daily screen time is 4.7 hours, with 67% being educational.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 6,
+    "category": "success",
+    "text": "71% of students have turned a screen hobby into a measurable skill.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 7,
+    "category": "platform",
+    "text": "Discord has emerged as the #1 community for learning, with 28% of students in study servers.",
+    "impact": "medium",
+    "source": "survey-2026"
+  },
+  {
+    "id": 8,
+    "category": "ai",
+    "text": "ChatGPT is used by 71% of AI users; Gemini by 24%; Copilot by 12%.",
+    "impact": "medium",
+    "source": "survey-2026"
+  },
+  {
+    "id": 9,
+    "category": "skill",
+    "text": "Video editing is the #2 self-taught skill, with 38% of students learning it.",
+    "impact": "medium",
+    "source": "survey-2026"
+  },
+  {
+    "id": 10,
+    "category": "wellness",
+    "text": "47% of students use screens within 1 hour of bed, reducing sleep quality by 22%.",
+    "impact": "high",
+    "source": "research-2026"
+  },
+  {
+    "id": 11,
+    "category": "success",
+    "text": "Average time to skill acquisition: 8.4 months of consistent practice.",
+    "impact": "medium",
+    "source": "interviews-2026"
+  },
+  {
+    "id": 12,
+    "category": "platform",
+    "text": "Khan Academy is the #2 most-used platform for academic learning, at 34%.",
+    "impact": "medium",
+    "source": "survey-2026"
+  },
+  {
+    "id": 13,
+    "category": "screen-time",
+    "text": "Mobile phones account for 64% of total screen time, laptops 24%, tablets 8%.",
+    "impact": "low",
+    "source": "survey-2026"
+  },
+  {
+    "id": 14,
+    "category": "success",
+    "text": "Students who share their work publicly are 3x more likely to develop a skill.",
+    "impact": "high",
+    "source": "research-2026"
+  },
+  {
+    "id": 15,
+    "category": "ai",
+    "text": "AI tutoring improves test scores by an average of 24% in pilot programs.",
+    "impact": "high",
+    "source": "meta-analysis-2026"
+  },
+  {
+    "id": 16,
+    "category": "platform",
+    "text": "TikTok's #LearnOnTikTok has 4.2B views, becoming a major learning channel.",
+    "impact": "medium",
+    "source": "platform-data"
+  },
+  {
+    "id": 17,
+    "category": "wellness",
+    "text": "Outdoor time of 60+ minutes/day reduces screen-time anxiety by 38%.",
+    "impact": "medium",
+    "source": "wellness-study-2026"
+  },
+  {
+    "id": 18,
+    "category": "skill",
+    "text": "AI Prompt Engineering is the fastest-growing skill, with 35% learning it in 2026.",
+    "impact": "high",
+    "source": "trend-analysis"
+  },
+  {
+    "id": 19,
+    "category": "success",
+    "text": "34% of skilled students have earned money, averaging ₹15,000 INR first earning.",
+    "impact": "high",
+    "source": "survey-2026"
+  },
+  {
+    "id": 20,
+    "category": "screen-time",
+    "text": "Students who schedule screen breaks every hour are 2x more productive.",
+    "impact": "medium",
+    "source": "productivity-study"
+  }
+]
