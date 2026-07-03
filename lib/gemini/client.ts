@@ -3,18 +3,25 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || "";
 
-export async function genText(prompt: string): Promise<string> {
+// Models confirmed working with your key
+const PRIMARY_MODEL = "gemini-2.5-flash";
+const QUALITY_MODEL = "gemini-2.5-pro";
+const FAST_MODEL = "gemini-2.5-flash-lite";
+const OPENROUTER_MODEL = "google/gemma-4-26b-a4b-it:free";
+
+export async function genText(prompt: string, model: string = PRIMARY_MODEL): Promise<string> {
   // Try Gemini first
   if (GEMINI_KEY && !GEMINI_KEY.includes("PLACEHOLDER")) {
     try {
       const ai = new GoogleGenerativeAI(GEMINI_KEY);
-      const model = ai.getGenerativeModel({ model: "gemini-2.0-flash" });
-      const result = await model.generateContent(prompt);
-      return result.response.text();
+      const m = ai.getGenerativeModel({ model });
+      const result = await m.generateContent(prompt);
+      const text = result.response.text();
+      if (text && text.trim()) return text;
     } catch (e: any) {
-      const errMsg = e?.message || String(e);
-      if (!errMsg.includes("429") && !errMsg.includes("quota")) {
-        console.error("Gemini error, trying OpenRouter:", errMsg.slice(0, 200));
+      const err = String(e?.message || e);
+      if (!err.includes("429") && !err.includes("quota")) {
+        console.error("Gemini error:", err.slice(0, 150));
       }
     }
   }
@@ -24,16 +31,15 @@ export async function genText(prompt: string): Promise<string> {
 
 async function genTextOpenRouter(prompt: string): Promise<string> {
   if (!OPENROUTER_KEY || OPENROUTER_KEY.includes("PLACEHOLDER")) {
-    return "AI service is offline. Add a valid API key in .env.local.";
+    return "AI service offline. Configure API keys in .env.local";
   }
-  // Use a free working model
-  const models = ["openrouter/free", "google/gemma-4-26b-a4b-it:free", "poolside/laguna-xs.2:free"];
+  const models = [OPENROUTER_MODEL, "openrouter/free"];
   for (const model of models) {
     try {
       const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: { "Authorization": `Bearer ${OPENROUTER_KEY}`, "Content-Type": "application/json", "HTTP-Referer": "https://skillverse.vercel.app", "X-Title": "SkillVerse" },
-        body: JSON.stringify({ model, messages: [{ role: "user", content: prompt }], max_tokens: 2000 })
+        body: JSON.stringify({ model, messages: [{ role: "user", content: prompt }], max_tokens: 4000 })
       });
       if (!res.ok) continue;
       const data = await res.json();
@@ -41,13 +47,15 @@ async function genTextOpenRouter(prompt: string): Promise<string> {
       if (text) return text;
     } catch {}
   }
-  return "AI service temporarily unavailable. Please try again.";
+  return "AI temporarily unavailable.";
 }
 
-export async function genJSON<T>(prompt: string): Promise<T | null> {
+export async function genJSON<T>(prompt: string, model?: string): Promise<T | null> {
   try {
-    const text = await genText(prompt);
+    const text = await genText(prompt, model);
     const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
     return JSON.parse(cleaned) as T;
   } catch { return null; }
 }
+
+export const MODELS = { PRIMARY: PRIMARY_MODEL, QUALITY: QUALITY_MODEL, FAST: FAST_MODEL };
