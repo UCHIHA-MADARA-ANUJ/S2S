@@ -38,3 +38,6 @@ CREATE POLICY "p_ins_p" ON pledge_signers FOR INSERT WITH CHECK (true);
 
 ALTER PUBLICATION supabase_realtime ADD TABLE survey_responses;
 ALTER PUBLICATION supabase_realtime ADD TABLE pledge_signers;
+
+-- Add ip_hash column if not exists
+ALTER TABLE survey_responses ADD COLUMN IF NOT EXISTS ip_hash TEXT;

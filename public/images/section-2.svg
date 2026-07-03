@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" fill="#0A0A0A"/>
+  <g stroke="#FF3D2E" stroke-width="2" opacity="0.6">
+    <path d="M 50 200 Q 200 100 400 200 T 750 200"/>
+  </g>
+  <g fill="#FF3D2E">
+    <circle cx="50" cy="200" r="6"/>
+    <circle cx="200" cy="140" r="4"/>
+    <circle cx="400" cy="200" r="8"/>
+    <circle cx="600" cy="140" r="4"/>
+    <circle cx="750" cy="200" r="6"/>
+  </g>
+  <text x="50" y="350" font-family="monospace" font-size="10" fill="#FF3D2E" letter-spacing="3">DATA_FLOW // RESPONSES_TO_INSIGHTS</text>
+</svg>
