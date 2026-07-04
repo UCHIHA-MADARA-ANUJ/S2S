@@ -2,6 +2,8 @@ import { getScreenTimeData, aggregateBy, avgBy } from "@/lib/data/kaggle";
 import { BarV, BarH, PieC } from "@/components/charts/ResearchChartWrapper";
 import { Globe, Clock, Sparkles, TrendingUp, ArrowLeft, Users } from "lucide-react";
 import Link from "next/link";
+import { SpotlightCard } from "@/components/effects/SpotlightCard";
+import { CountUp } from "@/components/effects/CountUp";
 
 export const dynamic = "force-dynamic";
 

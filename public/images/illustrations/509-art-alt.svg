@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g509" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#8B5CF6"/>
+        <stop offset="100%" stop-color="#6366F1"/>
+      </linearGradient>
+      <radialGradient id="glow509" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#0F172A"/>
+    <rect width="1000" height="1000" fill="url(#glow509)"/>
+    <rect x="7.5" y="391.75" width="35" height="216.5" fill="#6366F1" opacity="0.5796" rx="4"/><rect x="57.5" y="333.5" width="35" height="333" fill="#8B5CF6" opacity="0.7193999999999999" rx="4"/><rect x="107.5" y="275.25" width="35" height="449.5" fill="#6366F1" opacity="0.8592" rx="4"/><rect x="157.5" y="217" width="35" height="566" fill="#8B5CF6" opacity="0.399" rx="4"/><rect x="207.5" y="408.75" width="35" height="182.5" fill="#6366F1" opacity="0.5388" rx="4"/><rect x="257.5" y="350.5" width="35" height="299" fill="#8B5CF6" opacity="0.6786" rx="4"/><rect x="307.5" y="292.25" width="35" height="415.5" fill="#6366F1" opacity="0.8184" rx="4"/><rect x="357.5" y="234" width="35" height="532" fill="#8B5CF6" opacity="0.35819999999999996" rx="4"/><rect x="407.5" y="425.75" width="35" height="148.5" fill="#6366F1" opacity="0.498" rx="4"/><rect x="457.5" y="367.5" width="35" height="265" fill="#8B5CF6" opacity="0.6377999999999999" rx="4"/><rect x="507.5" y="309.25" width="35" height="381.5" fill="#6366F1" opacity="0.7776000000000001" rx="4"/><rect x="557.5" y="251" width="35" height="498" fill="#8B5CF6" opacity="0.3174" rx="4"/><rect x="607.5" y="442.75" width="35" height="114.5" fill="#6366F1" opacity="0.4572" rx="4"/><rect x="657.5" y="384.5" width="35" height="231" fill="#8B5CF6" opacity="0.597" rx="4"/><rect x="707.5" y="326.25" width="35" height="347.5" fill="#6366F1" opacity="0.7367999999999999" rx="4"/><rect x="757.5" y="268" width="35" height="464" fill="#8B5CF6" opacity="0.8766" rx="4"/><rect x="807.5" y="209.75" width="35" height="580.5" fill="#6366F1" opacity="0.4164" rx="4"/><rect x="857.5" y="401.5" width="35" height="197" fill="#8B5CF6" opacity="0.5562" rx="4"/><rect x="907.5" y="343.25" width="35" height="313.5" fill="#6366F1" opacity="0.696" rx="4"/><rect x="957.5" y="285" width="35" height="430" fill="#8B5CF6" opacity="0.8357999999999999" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">art alt</text>
+  </svg>

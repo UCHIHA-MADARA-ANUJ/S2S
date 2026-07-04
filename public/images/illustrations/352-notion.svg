@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g352" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#EC4899"/>
+        <stop offset="100%" stop-color="#F43F5E"/>
+      </linearGradient>
+      <radialGradient id="glow352" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#F9A8D4" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#F9A8D4" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow352)"/>
+    <rect x="7.5" y="289.25" width="35" height="421.5" fill="#F43F5E" opacity="0.47159999999999996" rx="4"/><rect x="57.5" y="378.5" width="35" height="243" fill="#EC4899" opacity="0.8573999999999999" rx="4"/><rect x="107.5" y="217.75" width="35" height="564.5" fill="#F43F5E" opacity="0.6432" rx="4"/><rect x="157.5" y="307" width="35" height="386" fill="#EC4899" opacity="0.429" rx="4"/><rect x="207.5" y="396.25" width="35" height="207.5" fill="#F43F5E" opacity="0.8148" rx="4"/><rect x="257.5" y="235.5" width="35" height="529" fill="#EC4899" opacity="0.6006" rx="4"/><rect x="307.5" y="324.75" width="35" height="350.5" fill="#F43F5E" opacity="0.38639999999999997" rx="4"/><rect x="357.5" y="414" width="35" height="172" fill="#EC4899" opacity="0.7722" rx="4"/><rect x="407.5" y="253.25" width="35" height="493.5" fill="#F43F5E" opacity="0.558" rx="4"/><rect x="457.5" y="342.5" width="35" height="315" fill="#EC4899" opacity="0.3438" rx="4"/><rect x="507.5" y="431.75" width="35" height="136.5" fill="#F43F5E" opacity="0.7296" rx="4"/><rect x="557.5" y="271" width="35" height="458" fill="#EC4899" opacity="0.5154" rx="4"/><rect x="607.5" y="360.25" width="35" height="279.5" fill="#F43F5E" opacity="0.30119999999999997" rx="4"/><rect x="657.5" y="449.5" width="35" height="101" fill="#EC4899" opacity="0.687" rx="4"/><rect x="707.5" y="288.75" width="35" height="422.5" fill="#F43F5E" opacity="0.4728" rx="4"/><rect x="757.5" y="378" width="35" height="244" fill="#EC4899" opacity="0.8586" rx="4"/><rect x="807.5" y="217.25" width="35" height="565.5" fill="#F43F5E" opacity="0.6444" rx="4"/><rect x="857.5" y="306.5" width="35" height="387" fill="#EC4899" opacity="0.43019999999999997" rx="4"/><rect x="907.5" y="395.75" width="35" height="208.5" fill="#F43F5E" opacity="0.8160000000000001" rx="4"/><rect x="957.5" y="235" width="35" height="530" fill="#EC4899" opacity="0.6018" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">notion</text>
+  </svg>

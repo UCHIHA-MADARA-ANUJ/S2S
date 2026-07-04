@@ -4,7 +4,10 @@ import { Github, Mail, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 py-16 bg-surface/30 mt-32 relative overflow-hidden">
+    <footer
+      className="border-t border-white/5 py-16 bg-surface/30 mt-32 relative overflow-hidden"
+      aria-label="Site footer"
+    >
       <div className="absolute inset-0 pointer-events-none opacity-30" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(255,61,46,0.1) 0%, transparent 50%)" }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -13,15 +16,19 @@ export function Footer() {
             <p className="text-text-secondary text-sm max-w-md mb-4">{SITE.tagline}</p>
             <p className="text-text-muted text-xs max-w-md">An AI-powered research platform analyzing how digital platforms help teenagers build real-world skills. Built for {SITE.competition}.</p>
           </div>
-          <div>
+          <nav aria-label="Footer navigation">
             <h4 className="label mb-4">Navigate</h4>
-            <div className="flex flex-col gap-2">
-              <Link href="/dashboard" className="text-text-secondary hover:text-white text-sm">Dashboard</Link>
-              <Link href="/survey" className="text-text-secondary hover:text-white text-sm">Take Survey</Link>
-              <Link href="/ai-hub" className="text-text-secondary hover:text-white text-sm">AI Hub</Link>
-              <Link href="/team" className="text-text-secondary hover:text-white text-sm">Team</Link>
-            </div>
-          </div>
+            <ul className="flex flex-col gap-2" role="list">
+              <li><Link href="/dashboard" className="text-text-secondary hover:text-white text-sm">Dashboard</Link></li>
+              <li><Link href="/survey" className="text-text-secondary hover:text-white text-sm">Take Survey</Link></li>
+              <li><Link href="/ai-hub" className="text-text-secondary hover:text-white text-sm">AI Hub</Link></li>
+              <li><Link href="/team" className="text-text-secondary hover:text-white text-sm">Team</Link></li>
+              <li><Link href="/docs" className="text-text-secondary hover:text-white text-sm">Docs &amp; Help</Link></li>
+              <li><Link href="/insights" className="text-text-secondary hover:text-white text-sm">Daily Insights</Link></li>
+              <li><Link href="/achievements" className="text-text-secondary hover:text-white text-sm">Achievements</Link></li>
+              <li><Link href="/settings" className="text-text-secondary hover:text-white text-sm">Settings</Link></li>
+            </ul>
+          </nav>
           <div>
             <h4 className="label mb-4">Project</h4>
             <p className="text-text-secondary text-sm mb-1">Team Lead: {TEAM.lead.name}</p>

@@ -2,8 +2,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Antigravity — React Bits-quality anti-gravity floating shapes
- * Multiple shapes (squares, circles, triangles) float and react to cursor.
+ * Antigravity - Floating geometric shapes in a parent container.
  */
 export interface AntigravityProps {
   count?: number;
@@ -28,54 +27,60 @@ export function Antigravity({
   className = "",
 }: AntigravityProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
   const mouse = useRef({ x: -9999, y: -9999, active: false });
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const onResize = () => {
+      const r = wrap.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      canvas.style.width = r.width + "px";
+      canvas.style.height = r.height + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     onResize();
+    const ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
     window.addEventListener("resize", onResize);
 
     const onMove = (e: MouseEvent) => {
-      mouse.current.x = e.clientX;
-      mouse.current.y = e.clientY;
+      const r = wrap.getBoundingClientRect();
+      mouse.current.x = e.clientX - r.left;
+      mouse.current.y = e.clientY - r.top;
       mouse.current.active = true;
     };
     const onLeave = () => { mouse.current.active = false; mouse.current.x = -9999; };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseleave", onLeave);
+    wrap.addEventListener("mousemove", onMove);
+    wrap.addEventListener("mouseleave", onLeave);
 
     const types: Shape["type"][] = ["sq", "ci", "tr"];
     const shapes: Shape[] = Array.from({ length: count }).map(() => {
       const size = sizeRange[0] + Math.random() * (sizeRange[1] - sizeRange[0]);
       return {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
+        x: Math.random() * wrap.clientWidth,
+        y: Math.random() * wrap.clientHeight,
         vx: (Math.random() - 0.5) * 0.4,
         vy: -0.4 - Math.random() * 0.6,
         rot: Math.random() * Math.PI * 2,
         vrot: (Math.random() - 0.5) * 0.02,
         type: types[Math.floor(Math.random() * 3)],
         size,
-        opacity: 0.2 + Math.random() * 0.4,
+        opacity: 0.3 + Math.random() * 0.5,
       };
     });
 
     const draw = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      const w = wrap.clientWidth;
+      const h = wrap.clientHeight;
       ctx.clearRect(0, 0, w, h);
       for (const s of shapes) {
         s.x += s.vx;
@@ -96,7 +101,7 @@ export function Antigravity({
           }
         }
         s.vx *= 0.99;
-        s.vy = s.vy * 0.99 - 0.005; // anti-gravity always floats up
+        s.vy = s.vy * 0.99 - 0.005;
 
         ctx.save();
         ctx.translate(s.x, s.y);
@@ -128,13 +133,18 @@ export function Antigravity({
 
     return () => {
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseleave", onLeave);
+      ro.disconnect();
+      wrap.removeEventListener("mousemove", onMove);
+      wrap.removeEventListener("mouseleave", onLeave);
       cancelAnimationFrame(rafRef.current);
     };
   }, [count, color, sizeRange]);
 
-  return <canvas ref={canvasRef} className={`pointer-events-none fixed inset-0 z-0 ${className}`} aria-hidden />;
+  return (
+    <div ref={wrapRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+      <canvas ref={canvasRef} style={{ display: "block" }} />
+    </div>
+  );
 }
 
 export default Antigravity;

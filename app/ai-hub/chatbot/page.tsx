@@ -2,6 +2,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Send, Bot, User, Loader2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { DotField } from "@/components/effects/DotField";
+import { TrackAIUsage } from "@/components/ui/TrackAIUsage";
+import { VoiceInput } from "@/components/ui/VoiceInput";
 
 const SUGGESTIONS = [
   "How can I turn YouTube into learning time?",
@@ -33,7 +36,13 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4">
+    <>
+      <TrackAIUsage featureId="chatbot" />
+      <div className="relative min-h-screen pt-24 pb-12 px-4 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-50">
+        <DotField dotSpacing={24} cursorRadius={200} sparkle={false} />
+      </div>
+      <div className="relative z-10">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center mx-auto mb-4">
@@ -76,12 +85,15 @@ export default function Chatbot() {
           </div>
           <div className="p-4 border-t border-white/5 flex gap-2">
             <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && send(input)} placeholder="Ask SkillBot anything..." className="flex-1 bg-surface border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-primary" />
+            <VoiceInput onResult={setInput} size="sm" ariaLabel="Voice message to SkillBot" />
             <button onClick={() => send(input)} disabled={loading || !input.trim()} className="btn-primary !p-3 disabled:opacity-30">
               <Send className="w-4 h-4" />
             </button>
           </div>
         </div>
       </div>
+          </div>
     </div>
+    </>
   );
 }

@@ -2,51 +2,62 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * DotField — React Bits-quality interactive dot grid background
- * Dots bulge away from cursor and sparkle randomly.
+ * DotField - Interactive cursor-aware dot grid.
+ * Renders in a parent container.
  */
 export function DotField({
-  dotRadius = 1.6,
-  dotSpacing = 16,
+  dotRadius = 2,
+  dotSpacing = 18,
   cursorRadius = 180,
-  cursorForce = 0.35,
-  bulgeStrength = 28,
+  cursorForce = 0.4,
+  bulgeStrength = 32,
   glowRadius = 220,
   sparkle = true,
-  waveAmplitude = 0.4,
+  waveAmplitude = 0.5,
   className = "",
-  gradientFrom = "rgba(99, 102, 241, 0.6)",
-  gradientTo = "rgba(139, 92, 246, 0.35)",
-  glowColor = "rgba(99, 102, 241, 0.18)",
+  gradientFrom = "rgba(99, 102, 241, 0.7)",
+  gradientTo = "rgba(139, 92, 246, 0.5)",
+  glowColor = "rgba(99, 102, 241, 0.22)",
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const mouse = useRef({ x: -9999, y: -9999, active: false });
   const tRef = useRef(0);
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    const onResize = () => setSize({ w: window.innerWidth, h: window.innerHeight });
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+    const onResize = () => {
+      const r = wrap.getBoundingClientRect();
+      setSize({ w: r.width, h: r.height });
+    };
     onResize();
+    const ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
     window.addEventListener("resize", onResize);
     const onMove = (e: MouseEvent) => {
-      mouse.current.x = e.clientX;
-      mouse.current.y = e.clientY;
+      const r = wrap.getBoundingClientRect();
+      mouse.current.x = e.clientX - r.left;
+      mouse.current.y = e.clientY - r.top;
       mouse.current.active = true;
     };
     const onLeave = () => { mouse.current.active = false; mouse.current.x = -9999; mouse.current.y = -9999; };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseleave", onLeave);
+    wrap.addEventListener("mousemove", onMove);
+    wrap.addEventListener("mouseleave", onLeave);
     return () => {
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseleave", onLeave);
+      ro.disconnect();
+      wrap.removeEventListener("mousemove", onMove);
+      wrap.removeEventListener("mouseleave", onLeave);
     };
   }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -58,7 +69,6 @@ export function DotField({
 
     const cols = Math.ceil(size.w / dotSpacing);
     const rows = Math.ceil(size.h / dotSpacing);
-    // base positions
     const dots: { x: number; y: number; base: { x: number; y: number }; phase: number; sparkle: number }[] = [];
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
@@ -72,7 +82,6 @@ export function DotField({
       tRef.current += 0.016;
       ctx.clearRect(0, 0, size.w, size.h);
 
-      // cursor glow
       if (mouse.current.active) {
         const grd = ctx.createRadialGradient(mouse.current.x, mouse.current.y, 0, mouse.current.x, mouse.current.y, glowRadius);
         grd.addColorStop(0, glowColor);
@@ -83,7 +92,6 @@ export function DotField({
 
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
-        // wave displacement
         const wx = Math.sin(tRef.current * 0.8 + d.phase) * waveAmplitude * 4;
         const wy = Math.cos(tRef.current * 0.7 + d.phase) * waveAmplitude * 4;
 
@@ -102,26 +110,24 @@ export function DotField({
         d.x = d.base.x + dx + wx;
         d.y = d.base.y + dy + wy;
 
-        // distance to cursor for color
-        let alpha = 0.35;
+        let alpha = 0.45;
         let radius = dotRadius;
         if (mouse.current.active) {
           const distC = Math.sqrt((d.base.x - mouse.current.x) ** 2 + (d.base.y - mouse.current.y) ** 2);
           if (distC < cursorRadius) {
             const t = 1 - distC / cursorRadius;
-            alpha = 0.35 + t * 0.6;
-            radius = dotRadius + t * 1.5;
+            alpha = 0.45 + t * 0.55;
+            radius = dotRadius + t * 2;
           }
         }
-        if (sparkle && d.sparkle < 0.03) {
+        if (sparkle && d.sparkle < 0.04) {
           const s = (Math.sin(tRef.current * 3 + d.phase) + 1) * 0.5;
           if (s > 0.85) {
-            radius = dotRadius + 1.5;
-            alpha = Math.min(1, alpha + 0.4);
+            radius = dotRadius + 2;
+            alpha = Math.min(1, alpha + 0.5);
           }
         }
 
-        // gradient color across canvas
         const gx = d.x / Math.max(1, size.w);
         const t = gx;
         const r1 = 99, g1 = 102, b1 = 241;
@@ -142,11 +148,9 @@ export function DotField({
   }, [size, dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeStrength, glowRadius, sparkle, waveAmplitude, glowColor, gradientFrom, gradientTo]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`pointer-events-none fixed inset-0 z-0 ${className}`}
-      aria-hidden
-    />
+    <div ref={wrapRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+      <canvas ref={canvasRef} style={{ display: "block" }} />
+    </div>
   );
 }
 

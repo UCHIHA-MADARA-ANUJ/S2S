@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g526" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#EC4899"/>
+        <stop offset="100%" stop-color="#F43F5E"/>
+      </linearGradient>
+      <radialGradient id="glow526" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#F9A8D4" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#F9A8D4" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow526)"/>
+    <line x1="0" y1="41.666666666666664" x2="1000" y2="26.606666666666662" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="125" x2="1000" y2="124.88" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="208.33333333333331" x2="1000" y2="223.1533333333333" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="291.66666666666663" x2="1000" y2="321.4266666666666" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="375" x2="1000" y2="359.7" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="458.3333333333333" x2="1000" y2="457.9733333333333" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="541.6666666666666" x2="1000" y2="556.2466666666667" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="625" x2="1000" y2="654.52" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="708.3333333333333" x2="1000" y2="692.7933333333333" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="791.6666666666666" x2="1000" y2="791.0666666666666" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="875" x2="1000" y2="889.34" stroke="#EC4899" stroke-width="1" opacity="0.4"/><line x1="0" y1="958.3333333333333" x2="1000" y2="987.6133333333332" stroke="#EC4899" stroke-width="1" opacity="0.4"/><rect x="300" y="300" width="400" height="400" fill="url(#g526)" opacity="0.3"/><rect x="350" y="350" width="300" height="300" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.6"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">stretch alt</text>
+  </svg>

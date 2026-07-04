@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g306" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6366F1"/>
+        <stop offset="100%" stop-color="#8B5CF6"/>
+      </linearGradient>
+      <radialGradient id="glow306" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow306)"/>
+    <rect x="7.5" y="224.25" width="35" height="551.5" fill="#8B5CF6" opacity="0.7836000000000001" rx="4"/><rect x="57.5" y="248.5" width="35" height="503" fill="#6366F1" opacity="0.7253999999999999" rx="4"/><rect x="107.5" y="272.75" width="35" height="454.5" fill="#8B5CF6" opacity="0.6672" rx="4"/><rect x="157.5" y="297" width="35" height="406" fill="#6366F1" opacity="0.609" rx="4"/><rect x="207.5" y="321.25" width="35" height="357.5" fill="#8B5CF6" opacity="0.5508" rx="4"/><rect x="257.5" y="345.5" width="35" height="309" fill="#6366F1" opacity="0.4926" rx="4"/><rect x="307.5" y="369.75" width="35" height="260.5" fill="#8B5CF6" opacity="0.4344" rx="4"/><rect x="357.5" y="394" width="35" height="212" fill="#6366F1" opacity="0.3762" rx="4"/><rect x="407.5" y="418.25" width="35" height="163.5" fill="#8B5CF6" opacity="0.318" rx="4"/><rect x="457.5" y="442.5" width="35" height="115" fill="#6366F1" opacity="0.8597999999999999" rx="4"/><rect x="507.5" y="216.75" width="35" height="566.5" fill="#8B5CF6" opacity="0.8015999999999999" rx="4"/><rect x="557.5" y="241" width="35" height="518" fill="#6366F1" opacity="0.7434" rx="4"/><rect x="607.5" y="265.25" width="35" height="469.5" fill="#8B5CF6" opacity="0.6852" rx="4"/><rect x="657.5" y="289.5" width="35" height="421" fill="#6366F1" opacity="0.627" rx="4"/><rect x="707.5" y="313.75" width="35" height="372.5" fill="#8B5CF6" opacity="0.5688" rx="4"/><rect x="757.5" y="338" width="35" height="324" fill="#6366F1" opacity="0.5105999999999999" rx="4"/><rect x="807.5" y="362.25" width="35" height="275.5" fill="#8B5CF6" opacity="0.4524" rx="4"/><rect x="857.5" y="386.5" width="35" height="227" fill="#6366F1" opacity="0.3942" rx="4"/><rect x="907.5" y="410.75" width="35" height="178.5" fill="#8B5CF6" opacity="0.33599999999999997" rx="4"/><rect x="957.5" y="435" width="35" height="130" fill="#6366F1" opacity="0.8777999999999999" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">crypto</text>
+  </svg>

@@ -1,0 +1,191 @@
+{
+  "Coding / Programming": {
+    "description": "Learn to code by building real projects. Start with Python or JavaScript, build apps, websites, or games. The #1 skill for future earnings.",
+    "bestFor": ["Students who like problem-solving", "Future engineers and product builders", "Anyone wanting to automate tasks"],
+    "skillsYouCanLearn": ["JavaScript", "Python", "Git", "APIs", "Databases", "Problem-solving"],
+    "resources": [
+      { "name": "freeCodeCamp (free, full curriculum)", "url": "https://freecodecamp.org", "free": true },
+      { "name": "The Odin Project (full-stack web dev)", "url": "https://theodinproject.com", "free": true },
+      { "name": "CS50 (Harvard's intro to CS, free on YouTube)", "url": "https://cs50.harvard.edu", "free": true }
+    ]
+  },
+  "Video Editing": {
+    "description": "Turn raw footage into stories. Learn cutting, transitions, color grading, and pacing. The fastest path to freelance income on day one.",
+    "bestFor": ["Creative storytellers", "Future YouTubers and creators", "Anyone with a phone camera"],
+    "skillsYouCanLearn": ["Premiere Pro", "DaVinci Resolve", "Color grading", "Audio mixing", "Storytelling"],
+    "resources": [
+      { "name": "DaVinci Resolve (free, pro-grade)", "url": "https://blackmagicdesign.com/davinciresolve", "free": true },
+      { "name": "CapCut (free, mobile-first)", "url": "https://capcut.com", "free": true },
+      { "name": "Peter McKinnon on YouTube (free)", "url": "https://youtube.com/@PeterMcKinnon", "free": true }
+    ]
+  },
+  "Graphic Design": {
+    "description": "Communicate visually. Learn typography, color theory, and layout. Build a portfolio on Instagram or Behance and start freelancing.",
+    "bestFor": ["Visual thinkers", "Future marketers and brand designers", "Anyone running a small business"],
+    "skillsYouCanLearn": ["Canva", "Figma", "Photoshop", "Typography", "Color theory", "Layout"],
+    "resources": [
+      { "name": "Figma (free for personal use)", "url": "https://figma.com", "free": true },
+      { "name": "Canva (free tier)", "url": "https://canva.com", "free": true },
+      { "name": "The Futur on YouTube (free)", "url": "https://youtube.com/@thefutur", "free": true }
+    ]
+  },
+  "Language Learning": {
+    "description": "Pick up a new language in 6 months with daily 20-minute practice. Apps like Duolingo + YouTube channels beat expensive classes.",
+    "bestFor": ["Globetrotters", "Future diplomats and translators", "Brain training enthusiasts"],
+    "skillsYouCanLearn": ["Vocabulary", "Grammar", "Pronunciation", "Cultural fluency"],
+    "resources": [
+      { "name": "Duolingo (free)", "url": "https://duolingo.com", "free": true },
+      { "name": "italki (affordable tutors)", "url": "https://italki.com", "free": false },
+      { "name": "LanguageTransfer (free on YouTube)", "url": "https://youtube.com/@languagetransfer", "free": true }
+    ]
+  },
+  "Writing / Blogging": {
+    "description": "Write online, build an audience, monetize. Start a free Substack or Medium. Many teens make ₹10K–50K/month within a year.",
+    "bestFor": ["Strong writers and thinkers", "Future journalists and authors", "Anyone with a niche interest"],
+    "skillsYouCanLearn": ["Storytelling", "SEO", "Editing", "Personal branding"],
+    "resources": [
+      { "name": "Substack (free to start)", "url": "https://substack.com", "free": true },
+      { "name": "Medium Partner Program (free to apply)", "url": "https://medium.com", "free": true },
+      { "name": "Scribbr (writing guides, free)", "url": "https://scribbr.com", "free": true }
+    ]
+  },
+  "Communication": {
+    "description": "Speak and write with confidence. Public speaking, presentations, persuasion — the #1 skill employers look for.",
+    "bestFor": ["Future leaders", "Anyone preparing for interviews", "Sales and marketing paths"],
+    "skillsYouCanLearn": ["Public speaking", "Active listening", "Negotiation", "Storytelling"],
+    "resources": [
+      { "name": "Toastmasters (free local clubs)", "url": "https://toastmasters.org", "free": true },
+      { "name": "TED Talks (free on YouTube)", "url": "https://youtube.com/@TED", "free": true },
+      { "name": "Chris Anderson on YouTube (free)", "url": "https://youtube.com/@TED", "free": true }
+    ]
+  },
+  "Music Production": {
+    "description": "Make beats, mix tracks, produce podcasts. Free tools like BandLab + GarageBand are enough to start. Many producers start earning in 6 months.",
+    "bestFor": ["Musicians and beatmakers", "Future audio engineers", "Hobbyists who want to share"],
+    "skillsYouCanLearn": ["Ableton Live", "FL Studio", "Mixing", "Sound design", "Beat-making"],
+    "resources": [
+      { "name": "BandLab (free, in-browser DAW)", "url": "https://bandlab.com", "free": true },
+      { "name": "GarageBand (free on Mac/iOS)", "url": "https://apple.com/mac/garageband", "free": true },
+      { "name": "You Suck at Producing (free YouTube)", "url": "https://youtube.com/@yousuckatproducing", "free": true }
+    ]
+  },
+  "Public Speaking": {
+    "description": "Get comfortable presenting to any audience. Toastmasters is free and the best training ground. The skill transfers to every career.",
+    "bestFor": ["Future leaders and managers", "Students who want to lead class", "Anyone preparing for interviews"],
+    "skillsYouCanLearn": ["Storytelling", "Voice modulation", "Stage presence", "Persuasion"],
+    "resources": [
+      { "name": "Toastmasters (free)", "url": "https://toastmasters.org", "free": true },
+      { "name": "TED Masterclass (paid but excellent)", "url": "https://masterclass.com", "free": false },
+      { "name": "Charisma on Command (free YouTube)", "url": "https://youtube.com/@charismaoncommand", "free": true }
+    ]
+  },
+  "Research Skills": {
+    "description": "Find, evaluate, and synthesize information. The most underrated skill — every career needs it. Start with Wikipedia rabbit holes, build to academic papers.",
+    "bestFor": ["Future academics and analysts", "Writers and journalists", "Anyone in decision-making roles"],
+    "skillsYouCanLearn": ["Source evaluation", "Citation", "Critical thinking", "Synthesizing"],
+    "resources": [
+      { "name": "Khan Academy (free)", "url": "https://khanacademy.org", "free": true },
+      { "name": "Coursera (free audit)", "url": "https://coursera.org", "free": true },
+      { "name": "Google Scholar (free)", "url": "https://scholar.google.com", "free": true }
+    ]
+  },
+  "AI / Prompt Engineering": {
+    "description": "The fastest-paying new skill. Master ChatGPT, Gemini, and Claude. Build AI workflows. Many freelancers charge ₹5K-50K per project.",
+    "bestFor": ["Future AI operators", "Anyone in tech, marketing, or content", "Side hustlers"],
+    "skillsYouCanLearn": ["Prompt design", "AI workflows", "API basics", "No-code tools"],
+    "resources": [
+      { "name": "DeepLearning.AI (free courses)", "url": "https://deeplearning.ai", "free": true },
+      { "name": "Learn Prompting (free)", "url": "https://learnprompting.org", "free": true },
+      { "name": "OpenAI Cookbook (free)", "url": "https://cookbook.openai.com", "free": true }
+    ]
+  },
+  "Collaboration / Teamwork": {
+    "description": "Work well with others. Communication, conflict resolution, and project management are the most underrated career skills.",
+    "bestFor": ["Future managers", "Anyone working in teams", "Remote work paths"],
+    "skillsYouCanLearn": ["Active listening", "Conflict resolution", "Project management", "Asynchronous communication"],
+    "resources": [
+      { "name": "Notion (free for personal)", "url": "https://notion.so", "free": true },
+      { "name": "Atlassian University (free)", "url": "https://atlassian.com/university", "free": true },
+      { "name": "Crucial Conversations (book)", "url": "https://amazon.com/dp/0071771328", "free": false }
+    ]
+  },
+  "Productivity / Time Management": {
+    "description": "Get 2x more done in the same time. Master your calendar, focus, and energy. This skill compounds forever.",
+    "bestFor": ["Students juggling school + hobbies", "Future founders", "Anyone feeling overwhelmed"],
+    "skillsYouCanLearn": ["Calendar management", "Deep work", "Energy management", "Systems thinking"],
+    "resources": [
+      { "name": "Notion (free for personal)", "url": "https://notion.so", "free": true },
+      { "name": "Todoist (free tier)", "url": "https://todoist.com", "free": true },
+      { "name": "Cal Newport on YouTube (free)", "url": "https://youtube.com/@studywithmiah", "free": true }
+    ]
+  },
+  "Math": {
+    "description": "Build a strong math foundation. From algebra to calculus, Khan Academy is free and better than most paid courses.",
+    "bestFor": ["Students preparing for STEM careers", "Anyone wanting to think more clearly", "Competitive exam prep"],
+    "skillsYouCanLearn": ["Algebra", "Calculus", "Statistics", "Logic"],
+    "resources": [
+      { "name": "Khan Academy (free, world-class)", "url": "https://khanacademy.org", "free": true },
+      { "name": "3Blue1Brown on YouTube (free)", "url": "https://youtube.com/@3blue1brown", "free": true },
+      { "name": "Brilliant (free trial)", "url": "https://brilliant.org", "free": false }
+    ]
+  },
+  "Science": {
+    "description": "Physics, chemistry, biology — the foundations. Build scientific thinking that applies to any problem.",
+    "bestFor": ["Future scientists and doctors", "Curious minds", "Engineering paths"],
+    "skillsYouCanLearn": ["Physics", "Chemistry", "Biology", "Experimental design"],
+    "resources": [
+      { "name": "Khan Academy (free)", "url": "https://khanacademy.org", "free": true },
+      { "name": "Crash Course on YouTube (free)", "url": "https://youtube.com/@crashcourse", "free": true },
+      { "name": "PhET Simulations (free)", "url": "https://phet.colorado.edu", "free": true }
+    ]
+  },
+  "Data Analysis": {
+    "description": "Turn raw data into decisions. Excel, SQL, Python pandas, and dashboards. Every company needs this.",
+    "bestFor": ["Future analysts and PMs", "Business students", "Anyone curious about the world"],
+    "skillsYouCanLearn": ["Excel", "SQL", "Python", "Tableau", "Statistics"],
+    "resources": [
+      { "name": "Khan Academy SQL (free)", "url": "https://khanacademy.org/sql", "free": true },
+      { "name": "Mode Analytics SQL Tutorial (free)", "url": "https://mode.com/sql-tutorial", "free": true },
+      { "name": "Kaggle Learn (free, hands-on)", "url": "https://kaggle.com/learn", "free": true }
+    ]
+  },
+  "Photography": {
+    "description": "Capture moments like a pro. Phone cameras are enough to start. Build a portfolio on Instagram and start selling prints within months.",
+    "bestFor": ["Visual creatives", "Travel lovers", "Future content creators"],
+    "skillsYouCanLearn": ["Composition", "Lighting", "Editing in Lightroom", "Storytelling"],
+    "resources": [
+      { "name": "Lightroom (free mobile)", "url": "https://adobe.com/products/photoshop-lightroom-classic.html", "free": true },
+      { "name": "Peter McKinnon on YouTube (free)", "url": "https://youtube.com/@PeterMcKinnon", "free": true },
+      { "name": "Shoot and Share (free YouTube)", "url": "https://youtube.com/@shootandshare", "free": true }
+    ]
+  },
+  "3D Modeling": {
+    "description": "Create 3D worlds, characters, and products. Blender is free and used by professional studios. Huge demand in gaming, film, and product design.",
+    "bestFor": ["Future game devs and animators", "Product designers", "Creative technologists"],
+    "skillsYouCanLearn": ["Blender", "Maya", "ZBrush", "UV mapping", "Texturing"],
+    "resources": [
+      { "name": "Blender (free, open-source)", "url": "https://blender.org", "free": true },
+      { "name": "Blender Guru on YouTube (free)", "url": "https://youtube.com/@blenderguru", "free": true },
+      { "name": "Polygon Runway (free YouTube)", "url": "https://youtube.com/@polygonrunway", "free": true }
+    ]
+  },
+  "Entrepreneurship": {
+    "description": "Start something. Even a ₹1000/month side project teaches you more than any course. Ship fast, learn faster.",
+    "bestFor": ["Builders with an itch", "Future founders", "Anyone wanting financial freedom"],
+    "skillsYouCanLearn": ["Idea validation", "MVP building", "Marketing", "Sales", "Finance basics"],
+    "resources": [
+      { "name": "Y Combinator Startup School (free)", "url": "https://startupschool.org", "free": true },
+      { "name": "Indie Hackers (free community)", "url": "https://indiehackers.com", "free": true },
+      { "name": "YC Lightcone Podcast (free)", "url": "https://youtube.com/@ycombinator", "free": true }
+    ]
+  },
+  "Other": {
+    "description": "Tell us what you're learning and we'll tailor a path for you.",
+    "bestFor": ["Anything not in the list"],
+    "skillsYouCanLearn": ["Whatever you want to learn"],
+    "resources": [
+      { "name": "Khan Academy (free, anything)", "url": "https://khanacademy.org", "free": true },
+      { "name": "YouTube (free, anything)", "url": "https://youtube.com", "free": true }
+    ]
+  }
+}

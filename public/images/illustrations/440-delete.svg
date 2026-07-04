@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g440" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#10B981"/>
+        <stop offset="100%" stop-color="#14B8A6"/>
+      </linearGradient>
+      <radialGradient id="glow440" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#6EE7B7" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#6EE7B7" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow440)"/>
+    <line x1="0" y1="41.666666666666664" x2="1000" y2="35.00666666666666" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="125" x2="1000" y2="141.68" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="208.33333333333331" x2="1000" y2="188.35333333333332" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="291.66666666666663" x2="1000" y2="295.02666666666664" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="375" x2="1000" y2="401.7" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="458.3333333333333" x2="1000" y2="448.37333333333333" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="541.6666666666666" x2="1000" y2="555.0466666666666" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="625" x2="1000" y2="601.72" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="708.3333333333333" x2="1000" y2="708.3933333333332" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="791.6666666666666" x2="1000" y2="815.0666666666666" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="875" x2="1000" y2="861.74" stroke="#10B981" stroke-width="1" opacity="0.4"/><line x1="0" y1="958.3333333333333" x2="1000" y2="968.4133333333333" stroke="#10B981" stroke-width="1" opacity="0.4"/><rect x="300" y="300" width="400" height="400" fill="url(#g440)" opacity="0.3"/><rect x="350" y="350" width="300" height="300" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.6"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">delete</text>
+  </svg>

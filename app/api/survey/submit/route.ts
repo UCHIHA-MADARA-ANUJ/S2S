@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createServerClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/server";
 import { getClientIp, checkIpRateLimit } from "@/lib/security";
 
 export async function POST(req: NextRequest) {
@@ -11,28 +11,76 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const supabase = createServerClient();
-    if (!supabase) return NextResponse.json({ success: true, id: "dev" });
+    const supabase = createServiceClient();
+    if (!supabase) {
+      // Dev mode: just acknowledge
+      return NextResponse.json({ success: true, id: "dev-" + Date.now() });
+    }
 
-    // Try with ip_hash first, fall back without
+    const userId = (body?.user_id || "").toString() || null;
+    const fp = (body?.fingerprint || "").toString();
+
+    // If user is signed in, check if THEY already submitted (by user_id)
+    if (userId) {
+      const { data: existing } = await supabase
+        .from("survey_responses")
+        .select("id")
+        .eq("user_id", userId)
+        .limit(1);
+      if (existing && existing.length) {
+        // Update existing response instead of duplicating
+        const { data: updated, error } = await supabase
+          .from("survey_responses")
+          .update({ ...body, user_id: userId, source: "website" })
+          .eq("user_id", userId)
+          .select("id")
+          .single();
+        if (error) return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+        return NextResponse.json({ success: true, id: updated.id, updated: true });
+      }
+    }
+    // Else, dedupe by fingerprint
+    else if (fp) {
+      const { data: existing } = await supabase
+        .from("survey_responses")
+        .select("id")
+        .eq("fingerprint", fp)
+        .limit(1);
+      if (existing && existing.length) {
+        return NextResponse.json({
+          success: false,
+          duplicate: true,
+          error: "This device has already submitted a response."
+        }, { status: 409 });
+      }
+    }
+
+    // Insert new
+    const insertData: any = { ...body, source: "website", ip_hash: hashIp(ip) };
+    if (userId) insertData.user_id = userId;
+
     let result = await supabase
       .from("survey_responses")
-      .insert({ ...body, source: "website", ip_hash: hashIp(ip) })
+      .insert(insertData)
       .select("id")
       .single();
 
-    if (result.error && result.error.message.includes("ip_hash")) {
-      // ip_hash column doesn't exist yet, retry without
+    // If column missing, retry without
+    if (result.error && (result.error.message.includes("ip_hash") || result.error.message.includes("user_id"))) {
+      const retryData: any = { ...body, source: "website" };
+      if (userId) retryData.user_id = userId;
       result = await supabase
         .from("survey_responses")
-        .insert({ ...body, source: "website" })
+        .insert(retryData)
         .select("id")
         .single();
     }
 
     if (result.error) return NextResponse.json({ success: false, error: result.error.message }, { status: 500 });
     return NextResponse.json({ success: true, id: result.data.id });
-  } catch (e: any) { return NextResponse.json({ success: false, error: e.message }, { status: 500 }); }
+  } catch (e: any) {
+    return NextResponse.json({ success: false, error: e.message }, { status: 500 });
+  }
 }
 
 function hashIp(ip: string): string {

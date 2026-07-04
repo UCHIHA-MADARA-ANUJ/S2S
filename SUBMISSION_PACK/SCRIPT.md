@@ -109,7 +109,7 @@
 
 **Speaker: DHUN**
 
-> "This is the **AI Hub** — eight AI features, all powered by **Google Gemini 2.5 Flash** with an OpenRouter fallback. Every feature answers a different question:
+> "This is the **AI Hub** — eight AI features, all powered by **Google Gemini 2.5 Flash** with an the latest Gemini model. Every feature answers a different question:
 >
 > - **SkillBot** — chat with an AI learning companion.
 > - **Wellness Analyzer** — paste any text, get a digital-wellness score.

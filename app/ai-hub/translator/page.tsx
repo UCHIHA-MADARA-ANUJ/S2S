@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
+import { DotField } from "@/components/effects/DotField";
 import { Languages, Loader2, Sparkles, ArrowRight } from "lucide-react";
+import { TrackAIUsage } from "@/components/ui/TrackAIUsage";
 
 const LANGS = ["Spanish", "French", "German", "Hindi", "Japanese", "Chinese", "Arabic", "Portuguese", "Korean"];
 
@@ -21,7 +23,11 @@ export default function TranslatorPage() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4">
+    <>
+      <TrackAIUsage featureId="translator" />
+      <div className="relative min-h-screen pt-24 pb-12 px-4 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-50"><DotField dotSpacing={28} cursorRadius={200} sparkle={false} /></div>
+      <div className="relative z-10"><div className="min-h-screen pt-24 pb-12 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-accent flex items-center justify-center mx-auto mb-4">
@@ -50,5 +56,7 @@ export default function TranslatorPage() {
         </div>
       </div>
     </div>
+      </div></div>
+    </>
   );
 }

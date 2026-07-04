@@ -1,4 +1,4 @@
-import { createServerClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/server";
 import type { SurveyResponse } from "@/types";
 
 export interface Stats {
@@ -108,7 +108,7 @@ function normCity(c: string): string {
 
 export async function getStats(): Promise<Stats> {
   try {
-    const supabase = createServerClient();
+    const supabase = createServiceClient();
     if (!supabase) return DEFAULTS;
     const { data, error } = await supabase
       .from("survey_responses")

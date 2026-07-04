@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g610" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#EC4899"/>
+        <stop offset="100%" stop-color="#F43F5E"/>
+      </linearGradient>
+      <radialGradient id="glow610" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#F9A8D4" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#F9A8D4" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow610)"/>
+    <rect x="7.5" y="439.25" width="35" height="121.5" fill="#F43F5E" opacity="0.35159999999999997" rx="4"/><rect x="57.5" y="428.5" width="35" height="143" fill="#EC4899" opacity="0.37739999999999996" rx="4"/><rect x="107.5" y="417.75" width="35" height="164.5" fill="#F43F5E" opacity="0.4032" rx="4"/><rect x="157.5" y="407" width="35" height="186" fill="#EC4899" opacity="0.429" rx="4"/><rect x="207.5" y="396.25" width="35" height="207.5" fill="#F43F5E" opacity="0.4548" rx="4"/><rect x="257.5" y="385.5" width="35" height="229" fill="#EC4899" opacity="0.48059999999999997" rx="4"/><rect x="307.5" y="374.75" width="35" height="250.5" fill="#F43F5E" opacity="0.5064" rx="4"/><rect x="357.5" y="364" width="35" height="272" fill="#EC4899" opacity="0.5322" rx="4"/><rect x="407.5" y="353.25" width="35" height="293.5" fill="#F43F5E" opacity="0.558" rx="4"/><rect x="457.5" y="342.5" width="35" height="315" fill="#EC4899" opacity="0.5838" rx="4"/><rect x="507.5" y="331.75" width="35" height="336.5" fill="#F43F5E" opacity="0.6095999999999999" rx="4"/><rect x="557.5" y="321" width="35" height="358" fill="#EC4899" opacity="0.6354" rx="4"/><rect x="607.5" y="310.25" width="35" height="379.5" fill="#F43F5E" opacity="0.6612" rx="4"/><rect x="657.5" y="299.5" width="35" height="401" fill="#EC4899" opacity="0.687" rx="4"/><rect x="707.5" y="288.75" width="35" height="422.5" fill="#F43F5E" opacity="0.7127999999999999" rx="4"/><rect x="757.5" y="278" width="35" height="444" fill="#EC4899" opacity="0.7385999999999999" rx="4"/><rect x="807.5" y="267.25" width="35" height="465.5" fill="#F43F5E" opacity="0.7644" rx="4"/><rect x="857.5" y="256.5" width="35" height="487" fill="#EC4899" opacity="0.7902" rx="4"/><rect x="907.5" y="245.75" width="35" height="508.5" fill="#F43F5E" opacity="0.8160000000000001" rx="4"/><rect x="957.5" y="235" width="35" height="530" fill="#EC4899" opacity="0.8417999999999999" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">mentor alt</text>
+  </svg>

@@ -2,7 +2,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * ClickSpark — React Bits-quality spark explosion on click
+ * ClickSpark - Spark explosion on click.
+ * Renders in a parent container.
  */
 export interface ClickSparkProps {
   sparkColor?: string;
@@ -26,7 +27,7 @@ interface Spark {
 }
 
 export function ClickSpark({
-  sparkColor = "#fff",
+  sparkColor = "#A78BFA",
   sparkSize = 10,
   sparkRadius = 15,
   sparkCount = 8,
@@ -36,24 +37,29 @@ export function ClickSpark({
   className = "",
 }: ClickSparkProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const onResize = () => {
+      const r = wrap.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      canvas.style.width = r.width + "px";
+      canvas.style.height = r.height + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     onResize();
+    const ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
     window.addEventListener("resize", onResize);
 
     const easeMap: Record<string, (t: number) => number> = {
@@ -65,8 +71,9 @@ export function ClickSpark({
     const ease = easeMap[easing] ?? easeMap["ease-out"];
 
     const onClick = (e: MouseEvent) => {
-      const x = e.clientX;
-      const y = e.clientY;
+      const r = wrap.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
       const now = performance.now();
       for (let i = 0; i < sparkCount; i++) {
         sparksRef.current.push({
@@ -80,10 +87,11 @@ export function ClickSpark({
         });
       }
     };
-    window.addEventListener("click", onClick);
+    wrap.addEventListener("click", onClick);
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const r = wrap.getBoundingClientRect();
+      ctx.clearRect(0, 0, r.width, r.height);
       const now = performance.now();
       sparksRef.current = sparksRef.current.filter((s) => now - s.start < duration);
       for (const s of sparksRef.current) {
@@ -106,12 +114,17 @@ export function ClickSpark({
 
     return () => {
       window.removeEventListener("resize", onResize);
-      window.removeEventListener("click", onClick);
+      ro.disconnect();
+      wrap.removeEventListener("click", onClick);
       cancelAnimationFrame(rafRef.current);
     };
   }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easing, extraScale]);
 
-  return <canvas ref={canvasRef} className={`pointer-events-none fixed inset-0 z-[90] ${className}`} aria-hidden />;
+  return (
+    <div ref={wrapRef} className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
+      <canvas ref={canvasRef} style={{ display: "block" }} />
+    </div>
+  );
 }
 
 export default ClickSpark;

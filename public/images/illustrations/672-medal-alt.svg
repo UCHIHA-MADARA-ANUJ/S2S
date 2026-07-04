@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g672" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6366F1"/>
+        <stop offset="100%" stop-color="#8B5CF6"/>
+      </linearGradient>
+      <radialGradient id="glow672" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow672)"/>
+    <rect x="7.5" y="219.25" width="35" height="561.5" fill="#8B5CF6" opacity="0.8075999999999999" rx="4"/><rect x="57.5" y="238.5" width="35" height="523" fill="#6366F1" opacity="0.7614" rx="4"/><rect x="107.5" y="257.75" width="35" height="484.5" fill="#8B5CF6" opacity="0.7152" rx="4"/><rect x="157.5" y="277" width="35" height="446" fill="#6366F1" opacity="0.669" rx="4"/><rect x="207.5" y="296.25" width="35" height="407.5" fill="#8B5CF6" opacity="0.6228" rx="4"/><rect x="257.5" y="315.5" width="35" height="369" fill="#6366F1" opacity="0.5766" rx="4"/><rect x="307.5" y="334.75" width="35" height="330.5" fill="#8B5CF6" opacity="0.5304" rx="4"/><rect x="357.5" y="354" width="35" height="292" fill="#6366F1" opacity="0.48419999999999996" rx="4"/><rect x="407.5" y="373.25" width="35" height="253.5" fill="#8B5CF6" opacity="0.438" rx="4"/><rect x="457.5" y="392.5" width="35" height="215" fill="#6366F1" opacity="0.3918" rx="4"/><rect x="507.5" y="411.75" width="35" height="176.5" fill="#8B5CF6" opacity="0.34559999999999996" rx="4"/><rect x="557.5" y="431" width="35" height="138" fill="#6366F1" opacity="0.8994" rx="4"/><rect x="607.5" y="200.25" width="35" height="599.5" fill="#8B5CF6" opacity="0.8532" rx="4"/><rect x="657.5" y="219.5" width="35" height="561" fill="#6366F1" opacity="0.8069999999999999" rx="4"/><rect x="707.5" y="238.75" width="35" height="522.5" fill="#8B5CF6" opacity="0.7607999999999999" rx="4"/><rect x="757.5" y="258" width="35" height="484" fill="#6366F1" opacity="0.7145999999999999" rx="4"/><rect x="807.5" y="277.25" width="35" height="445.5" fill="#8B5CF6" opacity="0.6684" rx="4"/><rect x="857.5" y="296.5" width="35" height="407" fill="#6366F1" opacity="0.6222" rx="4"/><rect x="907.5" y="315.75" width="35" height="368.5" fill="#8B5CF6" opacity="0.5760000000000001" rx="4"/><rect x="957.5" y="335" width="35" height="330" fill="#6366F1" opacity="0.5298" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">medal alt</text>
+  </svg>

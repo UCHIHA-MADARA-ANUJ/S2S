@@ -1,12 +1,12 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 /**
  * MagicBento — React Bits-style grid of cards with spot-light glow that follows cursor.
  */
 export interface MagicBentoProps {
-  children: React.ReactNode[];
+  children: React.ReactNode;
   columns?: number;
   className?: string;
   glowColor?: string;
@@ -101,7 +101,7 @@ export function MagicBento({
       className={`grid gap-3 ${className}`}
       style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
     >
-      {children.map((child, i) => (
+      {Children.toArray(children).map((child, i) => (
         <div
           key={i}
           onMouseMove={(e) => handleMove(e, i)}

@@ -1,9 +1,9 @@
-import { createBrowserClient } from "./client";
+import { getSupabaseBrowser } from "./client";
 import type { SurveyResponse } from "@/types";
 
 export async function getSurveyResponses(): Promise<SurveyResponse[]> {
   try {
-    const supabase = createBrowserClient();
+    const supabase = getSupabaseBrowser();
     if (!supabase) return [];
     const { data, error } = await supabase
       .from("survey_responses")
@@ -16,7 +16,7 @@ export async function getSurveyResponses(): Promise<SurveyResponse[]> {
 
 export async function insertSurvey(data: any): Promise<{ ok: boolean; id?: string; error?: string }> {
   try {
-    const supabase = createBrowserClient();
+    const supabase = getSupabaseBrowser();
     if (!supabase) return { ok: false, error: "DB not configured" };
     const { data: row, error } = await supabase
       .from("survey_responses")
@@ -30,7 +30,7 @@ export async function insertSurvey(data: any): Promise<{ ok: boolean; id?: strin
 
 export async function checkDuplicate(fp: string): Promise<boolean> {
   try {
-    const supabase = createBrowserClient();
+    const supabase = getSupabaseBrowser();
     if (!supabase) return false;
     const { data } = await supabase
       .from("survey_responses")
@@ -43,7 +43,7 @@ export async function checkDuplicate(fp: string): Promise<boolean> {
 
 export async function insertPledge(name: string, city?: string) {
   try {
-    const supabase = createBrowserClient();
+    const supabase = getSupabaseBrowser();
     if (!supabase) return { ok: false };
     const { error } = await supabase.from("pledge_signers").insert({ name, city });
     return { ok: !error };
@@ -52,7 +52,7 @@ export async function insertPledge(name: string, city?: string) {
 
 export async function getPledgeCount(): Promise<number> {
   try {
-    const supabase = createBrowserClient();
+    const supabase = getSupabaseBrowser();
     if (!supabase) return 0;
     const { count } = await supabase.from("pledge_signers").select("*", { count: "exact", head: true });
     return count || 0;

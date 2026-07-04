@@ -1,7 +1,67 @@
+# dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# next.js
 .next/
 out/
-.env.local
-*.log
+build/
+
+# production
+dist/
+
+# misc
 .DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local-only prompt pack (not part of the actual project)
+replit-work/
+REPLIT_PROMPTS/
+uploads/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local data generators (not part of the deployable app)
+data/generate-*.mjs
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Local secrets file (do not commit)
+SECRETS_FOR_DEPLOY.txt
+
+# Video output (generated, don't commit)
+video/*.mp4
+video/*.webm
+video/thumb-*.jpg

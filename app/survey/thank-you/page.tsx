@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { CheckCircle2, BarChart3, Bot, Share2 } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { SITE } from "@/lib/constants";
+import { ShareButton } from "@/components/ui/ShareButton";
 
 export default function ThankYou() {
   const [url, setUrl] = useState("");
@@ -30,6 +31,7 @@ export default function ThankYou() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
           <Link href="/dashboard" className="btn-primary text-sm"><BarChart3 className="w-4 h-4" /> View Dashboard</Link>
           <Link href="/ai-hub/chatbot" className="btn-secondary text-sm"><Bot className="w-4 h-4" /> Ask SkillBot</Link>
+          <ShareButton text="I just contributed to SkillVerse — research on screen time & skills for teens." hashtags={["SkillVerse", "Screen2Skill"]} label="Share" />
         </div>
         {url && (
           <div className="inline-flex flex-col items-center gap-3 glass p-6">

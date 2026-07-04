@@ -2,6 +2,8 @@ import { getSkillData, aggregateBy, avgBy } from "@/lib/data/kaggle";
 import { BarV, BarH, BarHDomain, ScatterC } from "@/components/charts/ResearchChartWrapper";
 import { TrendingUp, ArrowLeft, Clock, Target, Award } from "lucide-react";
 import Link from "next/link";
+import { SpotlightCard } from "@/components/effects/SpotlightCard";
+import { CountUp } from "@/components/effects/CountUp";
 
 export const dynamic = "force-dynamic";
 

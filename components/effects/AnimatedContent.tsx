@@ -1,9 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-/**
- * AnimatedContent — React Bits-quality entrance animation on scroll
- */
 export interface AnimatedContentProps {
   children: React.ReactNode;
   distance?: number;
@@ -34,16 +31,29 @@ export function AnimatedContent({
   className = "",
 }: AnimatedContentProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  // Start visible to avoid invisible content bug
+  const [visible, setVisible] = useState(true);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Check if already in view
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * (1 - threshold) && rect.bottom > 0;
+    if (inView) {
+      setHasAnimated(true);
+      return;
+    }
+    setVisible(false);
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            setTimeout(() => setVisible(true), delay * 1000);
+            setTimeout(() => {
+              setVisible(true);
+              setHasAnimated(true);
+            }, delay * 1000);
             observer.unobserve(el);
           }
         }
@@ -51,7 +61,14 @@ export function AnimatedContent({
       { threshold }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    const fallback = setTimeout(() => {
+      setVisible(true);
+      setHasAnimated(true);
+    }, 3000);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, [delay, threshold]);
 
   const initial: React.CSSProperties = {
@@ -67,7 +84,7 @@ export function AnimatedContent({
   };
 
   return (
-    <div ref={ref} className={className} style={visible ? animated : initial}>
+    <div ref={ref} className={className} style={(visible || hasAnimated) ? animated : initial}>
       {children}
     </div>
   );

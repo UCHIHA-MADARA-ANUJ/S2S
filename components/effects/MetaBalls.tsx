@@ -2,8 +2,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * MetaBalls — React Bits-quality gooey metaball background
- * Smooth animated blobby shapes using canvas + SVG filter.
+ * MetaBalls - Gooey metaball background in a parent container.
  */
 export interface MetaBallsProps {
   count?: number;
@@ -26,25 +25,31 @@ export function MetaBalls({
   className = "",
 }: MetaBallsProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
+
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const onResize = () => {
+      const r = wrap.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      canvas.style.width = r.width + "px";
+      canvas.style.height = r.height + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     onResize();
+    const ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
     window.addEventListener("resize", onResize);
 
-    const w0 = () => window.innerWidth;
-    const h0 = () => window.innerHeight;
+    const w0 = () => wrap.clientWidth;
+    const h0 = () => wrap.clientHeight;
     const balls: MB[] = Array.from({ length: count }).map((_, i) => ({
       x: w0() * (0.2 + 0.6 * Math.random()),
       y: h0() * (0.2 + 0.6 * Math.random()),
@@ -78,12 +83,13 @@ export function MetaBalls({
     rafRef.current = requestAnimationFrame(draw);
     return () => {
       window.removeEventListener("resize", onResize);
+      ro.disconnect();
       cancelAnimationFrame(rafRef.current);
     };
   }, [count, colors, speed]);
   return (
     <>
-      <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden>
+      <svg style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }} aria-hidden>
         <defs>
           <filter id="metaballs-goo">
             <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
@@ -96,12 +102,12 @@ export function MetaBalls({
           </filter>
         </defs>
       </svg>
-      <canvas
-        ref={canvasRef}
-        className={`pointer-events-none fixed inset-0 z-0 ${className}`}
-        style={{ filter: "url(#metaballs-goo)" }}
-        aria-hidden
-      />
+      <div ref={wrapRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+        <canvas
+          ref={canvasRef}
+          style={{ display: "block", filter: "url(#metaballs-goo)" }}
+        />
+      </div>
     </>
   );
 }

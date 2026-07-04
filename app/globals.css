@@ -6,6 +6,7 @@
   --background: 5 5 5;
   --primary: 255 61 46;
   --primary-rgb: 255 61 46;
+  --focus-ring: 0 0 0 3px rgba(255, 61, 46, 0.7);
 }
 
 * { box-sizing: border-box; }
@@ -27,39 +28,123 @@ html { scroll-behavior: smooth; }
 ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #FF3D2E; }
 
+/* ============================================
+   ACCESSIBILITY (WCAG AA)
+   - Visible focus indicators for keyboard users
+   - Skip-to-main link
+   - Reduced motion support
+   - Better glass-card contrast
+   ============================================ */
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid #FF3D2E;
+  outline-offset: 2px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 5px rgba(255, 61, 46, 0.25);
+  z-index: 1000;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: #FF3D2E;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 8px;
+  outline: 3px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-float,
+  .animate-spin-slow,
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root { --primary-rgb: 255 80 60; }
+  .text-text-secondary { color: #C0C0C0 !important; }
+  .text-text-muted { color: #999999 !important; }
+  .glass { border-color: rgba(255, 255, 255, 0.2) !important; }
+  .glass-strong { border-color: rgba(255, 255, 255, 0.3) !important; }
+}
+
+input, textarea, select { font-size: 16px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { border-color: #FF3D2E; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+a { color: inherit; }
+
 @layer utilities {
-  .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .glass-strong {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .glass-subtle {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-  }
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
   .grain {
     position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  .touch-target { min-height: 44px; min-width: 44px; }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold tracking-wide uppercase text-sm transition-all hover:scale-105;
-    box-shadow: 0 0 0 0 rgba(255,61,46,0);
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold tracking-wide uppercase text-sm transition-all;
+    min-height: 44px;
   }
+  .btn-primary:hover:not(:disabled) { transform: scale(1.05); }
   .btn-primary:hover { box-shadow: 0 0 40px rgba(255,61,46,0.4); }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold tracking-wide uppercase text-sm transition-all hover:bg-white hover:text-black;
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold tracking-wide uppercase text-sm transition-all;
+    min-height: 44px;
   }
+  .btn-secondary:hover { background: white; color: black; }
   .label {
     @apply text-[11px] font-mono uppercase tracking-[0.2em] text-text-muted;
   }

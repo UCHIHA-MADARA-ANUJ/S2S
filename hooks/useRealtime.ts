@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { createBrowserClient } from "@/lib/supabase/client";
+import { getSupabaseBrowser } from "@/lib/supabase/client";
 import type { SurveyResponse } from "@/types";
 
 export function useRealtime() {
@@ -10,7 +10,7 @@ export function useRealtime() {
   const [live, setLive] = useState(false);
 
   useEffect(() => {
-    const s = createBrowserClient();
+    const s = getSupabaseBrowser();
     if (!s) { setLoading(false); return; }
     const load = async () => {
       const { data } = await s.from("survey_responses").select("*").order("created_at", { ascending: false });

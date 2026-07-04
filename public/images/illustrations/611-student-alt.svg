@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g611" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#8B5CF6"/>
+        <stop offset="100%" stop-color="#6366F1"/>
+      </linearGradient>
+      <radialGradient id="glow611" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#0F172A"/>
+    <rect width="1000" height="1000" fill="url(#glow611)"/>
+    <rect x="7.5" y="301.75" width="35" height="396.5" fill="#6366F1" opacity="0.41159999999999997" rx="4"/><rect x="57.5" y="403.5" width="35" height="193" fill="#8B5CF6" opacity="0.7674" rx="4"/><rect x="107.5" y="255.25" width="35" height="489.5" fill="#6366F1" opacity="0.5232" rx="4"/><rect x="157.5" y="357" width="35" height="286" fill="#8B5CF6" opacity="0.879" rx="4"/><rect x="207.5" y="208.75" width="35" height="582.5" fill="#6366F1" opacity="0.6348" rx="4"/><rect x="257.5" y="310.5" width="35" height="379" fill="#8B5CF6" opacity="0.3906" rx="4"/><rect x="307.5" y="412.25" width="35" height="175.5" fill="#6366F1" opacity="0.7464" rx="4"/><rect x="357.5" y="264" width="35" height="472" fill="#8B5CF6" opacity="0.5022" rx="4"/><rect x="407.5" y="365.75" width="35" height="268.5" fill="#6366F1" opacity="0.8580000000000001" rx="4"/><rect x="457.5" y="217.5" width="35" height="565" fill="#8B5CF6" opacity="0.6138" rx="4"/><rect x="507.5" y="319.25" width="35" height="361.5" fill="#6366F1" opacity="0.3696" rx="4"/><rect x="557.5" y="421" width="35" height="158" fill="#8B5CF6" opacity="0.7253999999999999" rx="4"/><rect x="607.5" y="272.75" width="35" height="454.5" fill="#6366F1" opacity="0.48119999999999996" rx="4"/><rect x="657.5" y="374.5" width="35" height="251" fill="#8B5CF6" opacity="0.837" rx="4"/><rect x="707.5" y="226.25" width="35" height="547.5" fill="#6366F1" opacity="0.5928" rx="4"/><rect x="757.5" y="328" width="35" height="344" fill="#8B5CF6" opacity="0.34859999999999997" rx="4"/><rect x="807.5" y="429.75" width="35" height="140.5" fill="#6366F1" opacity="0.7044" rx="4"/><rect x="857.5" y="281.5" width="35" height="437" fill="#8B5CF6" opacity="0.4602" rx="4"/><rect x="907.5" y="383.25" width="35" height="233.5" fill="#6366F1" opacity="0.8160000000000001" rx="4"/><rect x="957.5" y="235" width="35" height="530" fill="#8B5CF6" opacity="0.5718" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">student alt</text>
+  </svg>

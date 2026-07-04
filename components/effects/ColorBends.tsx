@@ -2,8 +2,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * ColorBends — flowing gradient color bands in 3D
- * Uses simple shader-less canvas with noise-driven waves.
+ * ColorBends - Flowing gradient color bands in a parent container.
  */
 export interface ColorBendsProps {
   colors?: string[];
@@ -25,24 +24,29 @@ export function ColorBends({
   className = "",
 }: ColorBendsProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
   const tRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const onResize = () => {
+      const r = wrap.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
+      canvas.width = r.width * dpr;
+      canvas.height = r.height * dpr;
+      canvas.style.width = r.width + "px";
+      canvas.style.height = r.height + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     onResize();
+    const ro = new ResizeObserver(onResize);
+    ro.observe(wrap);
     window.addEventListener("resize", onResize);
 
     const hexToRgb = (hex: string) => {
@@ -56,8 +60,8 @@ export function ColorBends({
 
     const draw = () => {
       tRef.current += 0.016 * speed;
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      const w = wrap.clientWidth;
+      const h = wrap.clientHeight;
       ctx.clearRect(0, 0, w, h);
 
       const bands = 5;
@@ -73,7 +77,7 @@ export function ColorBends({
         const c = hexToRgb(colors[b % colors.length]);
         const grad = ctx.createLinearGradient(0, yBase - 120, 0, yBase + 120);
         grad.addColorStop(0, `rgba(${c.r},${c.g},${c.b},0)`);
-        grad.addColorStop(0.5, `rgba(${c.r},${c.g},${c.b},0.55)`);
+        grad.addColorStop(0.5, `rgba(${c.r},${c.g},${c.b},0.7)`);
         grad.addColorStop(1, `rgba(${c.r},${c.g},${c.b},0)`);
         ctx.fillStyle = grad;
         ctx.beginPath();
@@ -99,16 +103,15 @@ export function ColorBends({
 
     return () => {
       window.removeEventListener("resize", onResize);
+      ro.disconnect();
       cancelAnimationFrame(rafRef.current);
     };
   }, [colors, speed, frequency, amplitude, rotation]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`pointer-events-none fixed inset-0 z-0 ${className}`}
-      aria-hidden
-    />
+    <div ref={wrapRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+      <canvas ref={canvasRef} style={{ display: "block" }} />
+    </div>
   );
 }
 

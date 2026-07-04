@@ -1,11 +1,16 @@
 "use client";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend, AreaChart, Area } from "recharts";
-import { Users, Clock, Brain, TrendingUp, Download } from "lucide-react";
+import { Users, Clock, Brain, TrendingUp, Download, LogIn, UserPlus } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import { SpotlightCard } from "@/components/effects/SpotlightCard";
+import { GlowCard } from "@/components/effects/GlowCard";
+import { CountUp } from "@/components/effects/CountUp";
+import { MagicRings } from "@/components/effects/MagicRings";
 
 const COLORS = ["#FF3D2E", "#FFA800", "#00E1FF", "#10B981", "#8B5CF6", "#EC4899"];
 
-export function DashboardClient({ stats }: { stats: any }) {
+export function DashboardClient({ stats, myData }: { stats: any; myData?: any }) {
   const [filter, setFilter] = useState("all");
 
   return (
@@ -22,11 +27,90 @@ export function DashboardClient({ stats }: { stats: any }) {
           </button>
         </div>
 
+        {/* Personalised "Your Data" banner when signed in */}
+        {myData && myData.myResponse && (
+          <div className="mb-8 glass-strong p-6 rounded-2xl relative overflow-hidden" data-reveal>
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center font-display font-black text-white text-xl shrink-0">
+                  {(myData.email?.[0] || "U").toUpperCase()}
+                </div>
+                <div>
+                  <p className="label">WELCOME BACK</p>
+                  <h2 className="font-display font-black text-2xl">{myData.profile?.full_name || myData.email?.split("@")[0]}</h2>
+                  <p className="text-text-secondary text-sm">{myData.email}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div>
+                  <p className="text-[10px] label">YOUR SCREEN TIME</p>
+                  <p className="text-2xl font-display font-black text-primary">{myData.myResponse.daily_screen_time || 0}<span className="text-sm text-text-muted">hr</span></p>
+                </div>
+                <div>
+                  <p className="text-[10px] label">YOU LEARN</p>
+                  <p className="text-2xl font-display font-black text-accent">{myData.myResponse.learning_percentage || 0}<span className="text-sm text-text-muted">%</span></p>
+                </div>
+                <div>
+                  <p className="text-[10px] label">TOP PLATFORM</p>
+                  <p className="text-sm font-bold truncate max-w-[120px]">{myData.myResponse.most_helpful_platform || "—"}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] label">YOU USE AI?</p>
+                  <p className="text-2xl font-display font-black text-success">{myData.myResponse.uses_ai_tools ? "Yes" : "No"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* CTA banner for non-signed-in users */}
+        {myData === null && (
+          <div className="mb-8 glass p-5 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="label mb-1">PERSONALISE YOUR VIEW</p>
+              <p className="text-sm text-text-secondary">Sign in to see how your habits compare to the 250+ students in our survey.</p>
+            </div>
+            <div className="flex gap-2 shrink-0">
+              <Link href="/signin?next=/dashboard" className="btn-secondary text-xs"><LogIn className="w-3.5 h-3.5" /> Sign in</Link>
+              <Link href="/signup?next=/dashboard" className="btn-primary text-xs"><UserPlus className="w-3.5 h-3.5" /> Sign up</Link>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-          <KPI icon={Users} value={stats.total} label="Total" trend="+0 today" />
-          <KPI icon={Clock} value={`${stats.avgScreenTime}hr`} label="Avg/Day" trend="daily" />
-          <KPI icon={Brain} value={`${stats.aiUsageRate}%`} label="AI Users" trend="↗ +5%" highlight />
-          <KPI icon={TrendingUp} value={`${stats.positiveImpactRate}%`} label="Positive" trend="↗" />
+          <SpotlightCard>
+            <div className="flex items-center justify-between mb-3">
+              <Users className="w-5 h-5 text-primary" />
+              <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            </div>
+            <div className="text-3xl font-display font-black tabular-nums"><CountUp to={stats.total} duration={2} /></div>
+            <div className="label mt-1">Total Responses</div>
+          </SpotlightCard>
+          <SpotlightCard>
+            <div className="flex items-center justify-between mb-3">
+              <Clock className="w-5 h-5 text-secondary" />
+              <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            </div>
+            <div className="text-3xl font-display font-black tabular-nums"><CountUp to={stats.avgScreenTime} decimals={1} duration={2} />hr</div>
+            <div className="label mt-1">Avg / Day</div>
+          </SpotlightCard>
+          <SpotlightCard>
+            <div className="flex items-center justify-between mb-3">
+              <Brain className="w-5 h-5 text-accent" />
+              <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            </div>
+            <div className="text-3xl font-display font-black tabular-nums"><CountUp to={stats.aiUsageRate} suffix="%" duration={2} /></div>
+            <div className="label mt-1">Use AI Tools</div>
+          </SpotlightCard>
+          <SpotlightCard>
+            <div className="flex items-center justify-between mb-3">
+              <TrendingUp className="w-5 h-5 text-pink" />
+              <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
+            </div>
+            <div className="text-3xl font-display font-black tabular-nums"><CountUp to={stats.positiveImpactRate} suffix="%" duration={2} /></div>
+            <div className="label mt-1">Positive Impact</div>
+          </SpotlightCard>
         </div>
 
         <div className="flex gap-2 mb-6 overflow-x-auto pb-2">

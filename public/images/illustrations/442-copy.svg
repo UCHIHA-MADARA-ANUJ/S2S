@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+    <defs>
+      <linearGradient id="g442" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#EC4899"/>
+        <stop offset="100%" stop-color="#F43F5E"/>
+      </linearGradient>
+      <radialGradient id="glow442" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#F9A8D4" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#F9A8D4" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1000" height="1000" fill="#030712"/>
+    <rect width="1000" height="1000" fill="url(#glow442)"/>
+    <rect x="7.5" y="306.75" width="35" height="386.5" fill="#F43F5E" opacity="0.3876" rx="4"/><rect x="57.5" y="413.5" width="35" height="173" fill="#EC4899" opacity="0.7313999999999999" rx="4"/><rect x="107.5" y="270.25" width="35" height="459.5" fill="#F43F5E" opacity="0.47519999999999996" rx="4"/><rect x="157.5" y="377" width="35" height="246" fill="#EC4899" opacity="0.819" rx="4"/><rect x="207.5" y="233.75" width="35" height="532.5" fill="#F43F5E" opacity="0.5628" rx="4"/><rect x="257.5" y="340.5" width="35" height="319" fill="#EC4899" opacity="0.3066" rx="4"/><rect x="307.5" y="447.25" width="35" height="105.5" fill="#F43F5E" opacity="0.6504" rx="4"/><rect x="357.5" y="304" width="35" height="392" fill="#EC4899" opacity="0.3942" rx="4"/><rect x="407.5" y="410.75" width="35" height="178.5" fill="#F43F5E" opacity="0.738" rx="4"/><rect x="457.5" y="267.5" width="35" height="465" fill="#EC4899" opacity="0.4818" rx="4"/><rect x="507.5" y="374.25" width="35" height="251.5" fill="#F43F5E" opacity="0.8255999999999999" rx="4"/><rect x="557.5" y="231" width="35" height="538" fill="#EC4899" opacity="0.5693999999999999" rx="4"/><rect x="607.5" y="337.75" width="35" height="324.5" fill="#F43F5E" opacity="0.3132" rx="4"/><rect x="657.5" y="444.5" width="35" height="111" fill="#EC4899" opacity="0.657" rx="4"/><rect x="707.5" y="301.25" width="35" height="397.5" fill="#F43F5E" opacity="0.4008" rx="4"/><rect x="757.5" y="408" width="35" height="184" fill="#EC4899" opacity="0.7445999999999999" rx="4"/><rect x="807.5" y="264.75" width="35" height="470.5" fill="#F43F5E" opacity="0.48839999999999995" rx="4"/><rect x="857.5" y="371.5" width="35" height="257" fill="#EC4899" opacity="0.8322" rx="4"/><rect x="907.5" y="228.25" width="35" height="543.5" fill="#F43F5E" opacity="0.5760000000000001" rx="4"/><rect x="957.5" y="335" width="35" height="330" fill="#EC4899" opacity="0.3198" rx="4"/>
+    <text x="500" y="960" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle" opacity="0.85">copy</text>
+  </svg>

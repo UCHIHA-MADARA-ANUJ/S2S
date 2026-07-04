@@ -12,27 +12,46 @@ export interface ScrollRevealProps {
   as?: "div" | "section" | "span" | "p" | "h1" | "h2" | "h3";
 }
 
+/**
+ * ScrollReveal - Reveals content on scroll.
+ * IMPORTANT: Defaults to visible=true for SSR/no-JS users, then animates
+ * on mount + scroll. Falls back gracefully.
+ */
 export function ScrollReveal({
   children,
   effect = "slide-up",
   duration = 0.8,
   delay = 0,
   distance = 30,
-  threshold = 0.15,
+  threshold = 0.1,
   className = "",
   as = "div",
 }: ScrollRevealProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  // Start VISIBLE so content is never invisible
+  const [visible, setVisible] = useState(true);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // If already in viewport on mount, animate immediately
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * (1 - threshold) && rect.bottom > 0;
+    if (inView) {
+      setHasAnimated(true);
+      return;
+    }
+    // Otherwise, start hidden and reveal on scroll
+    setVisible(false);
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting) {
-            setTimeout(() => setVisible(true), delay * 1000);
+            setTimeout(() => {
+              setVisible(true);
+              setHasAnimated(true);
+            }, delay * 1000);
             observer.unobserve(el);
           }
         }
@@ -40,14 +59,22 @@ export function ScrollReveal({
       { threshold }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    // Safety fallback: if observer never fires, show after 3s
+    const fallback = setTimeout(() => {
+      setVisible(true);
+      setHasAnimated(true);
+    }, 3000);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, [delay, threshold]);
 
   const initial: React.CSSProperties = {
     opacity: 0,
     transition: `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, filter ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
   };
-  const visible2: React.CSSProperties = {
+  const visibleStyle: React.CSSProperties = {
     opacity: 1,
     transform: "none",
     filter: "blur(0px)",
@@ -65,7 +92,8 @@ export function ScrollReveal({
     flip: { ...initial, transform: `rotateX(${distance * 2}deg)` },
   };
 
-  const style = visible ? visible2 : initialMap[effect] ?? initial;
+  // KEY FIX: if !visible AND no fallback yet, use initial; otherwise show visible
+  const style = (visible || hasAnimated) ? visibleStyle : initialMap[effect] ?? initial;
 
   return createElement(
     as,

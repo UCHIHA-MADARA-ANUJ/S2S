@@ -2,6 +2,8 @@ import { getSocialMediaData, aggregateBy, avgBy } from "@/lib/data/kaggle";
 import { BarV, BarH, ComposedC as ComposedC } from "@/components/charts/ResearchChartWrapper";
 import { Heart, ArrowLeft, Smile, Frown } from "lucide-react";
 import Link from "next/link";
+import { SpotlightCard } from "@/components/effects/SpotlightCard";
+import { CountUp } from "@/components/effects/CountUp";
 
 export const dynamic = "force-dynamic";
 

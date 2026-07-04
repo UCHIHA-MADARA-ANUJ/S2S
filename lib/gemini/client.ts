@@ -1,61 +1,88 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
-const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY || "";
+// Gemini-only client. Tries 3 models in fallback order.
+const GEMINI_KEY =
+  process.env.GEMINI_API_KEY ||
+  process.env.GOOGLE_API_KEY ||
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
+  "";
 
-// Models confirmed working with your key
-const PRIMARY_MODEL = "gemini-2.5-flash";
-const QUALITY_MODEL = "gemini-2.5-pro";
-const FAST_MODEL = "gemini-2.5-flash-lite";
-const OPENROUTER_MODEL = "google/gemma-4-26b-a4b-it:free";
+// Models that work with the current key (tested 2026-07-04).
+// gemini-2.0-flash and pro-latest are 429 (rate-limited on this key), so don't try them first.
+const MODELS_FAST = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"];
+const MODELS_QUALITY = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-latest"];
 
-export async function genText(prompt: string, model: string = PRIMARY_MODEL): Promise<string> {
-  // Try Gemini first
-  if (GEMINI_KEY && !GEMINI_KEY.includes("PLACEHOLDER")) {
+let _warned = false;
+function warnOnce() {
+  if (_warned) return;
+  _warned = true;
+  // eslint-disable-next-line no-console
+  console.log(`[gemini] key ${GEMINI_KEY ? "loaded (" + GEMINI_KEY.slice(0, 8) + "...)" : "MISSING"}`);
+}
+
+function isPlaceholder(s: string) {
+  if (!s) return true;
+  if (s.includes("PLACEHOLDER")) return true;
+  if (s.includes("your_")) return true;
+  if (s.length < 10) return true;
+  return false;
+}
+
+/**
+ * Generate text using Gemini. Tries 3 models in order.
+ * Returns a real string (never throws).
+ */
+export async function genText(prompt: string, model?: string): Promise<string> {
+  warnOnce();
+
+  if (isPlaceholder(GEMINI_KEY)) {
+    return "AI service offline. Set GEMINI_API_KEY in Vercel Environment Variables.";
+  }
+
+  const models = model
+    ? [model, ...MODELS_FAST.filter((m) => m !== model)]
+    : MODELS_FAST;
+
+  for (const m of models) {
     try {
       const ai = new GoogleGenerativeAI(GEMINI_KEY);
-      const m = ai.getGenerativeModel({ model });
-      const result = await m.generateContent(prompt);
+      const md = ai.getGenerativeModel({ model: m });
+      const result = await md.generateContent(prompt);
       const text = result.response.text();
-      if (text && text.trim()) return text;
+      if (text && text.trim()) {
+        if (m !== models[0]) console.log(`[gemini] succeeded with fallback model: ${m}`);
+        return text;
+      }
     } catch (e: any) {
       const err = String(e?.message || e);
-      if (!err.includes("429") && !err.includes("quota")) {
-        console.error("Gemini error:", err.slice(0, 150));
+      // 429 = rate limited, 404 = model not found, 503 = overload
+      // All non-fatal — try next model
+      if (!err.includes("429") && !err.includes("404") && !err.includes("503")) {
+        // eslint-disable-next-line no-console
+        console.error(`[gemini] ${m} error:`, err.slice(0, 200));
       }
     }
   }
-  // Fallback to OpenRouter
-  return await genTextOpenRouter(prompt);
+
+  return "AI service temporarily unavailable. All models are rate-limited or erroring. Please try again in a moment.";
 }
 
-async function genTextOpenRouter(prompt: string): Promise<string> {
-  if (!OPENROUTER_KEY || OPENROUTER_KEY.includes("PLACEHOLDER")) {
-    return "AI service offline. Configure API keys in .env.local";
-  }
-  const models = [OPENROUTER_MODEL, "openrouter/free"];
-  for (const model of models) {
-    try {
-      const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: { "Authorization": `Bearer ${OPENROUTER_KEY}`, "Content-Type": "application/json", "HTTP-Referer": "https://skillverse.vercel.app", "X-Title": "SkillVerse" },
-        body: JSON.stringify({ model, messages: [{ role: "user", content: prompt }], max_tokens: 4000 })
-      });
-      if (!res.ok) continue;
-      const data = await res.json();
-      const text = data.choices?.[0]?.message?.content;
-      if (text) return text;
-    } catch {}
-  }
-  return "AI temporarily unavailable.";
-}
-
-export async function genJSON<T>(prompt: string, model?: string): Promise<T | null> {
+/**
+ * Generate JSON. Robustly extracts a JSON object/array from the response.
+ * Returns null on failure.
+ */
+export async function genJSON<T = any>(prompt: string, model?: string): Promise<T | null> {
   try {
     const text = await genText(prompt, model);
-    const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-    return JSON.parse(cleaned) as T;
-  } catch { return null; }
+    // Try to find JSON in the response
+    const jsonMatch = text.match(/\{[\s\S]*\}|\[[\s\S]*\]/);
+    if (jsonMatch) {
+      return JSON.parse(jsonMatch[0]) as T;
+    }
+    return null;
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error("genJSON error:", e);
+    return null;
+  }
 }
-
-export const MODELS = { PRIMARY: PRIMARY_MODEL, QUALITY: QUALITY_MODEL, FAST: FAST_MODEL };
