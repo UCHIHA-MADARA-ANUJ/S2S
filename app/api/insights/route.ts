@@ -82,7 +82,7 @@ export async function GET(req: NextRequest) {
   const safe = TYPES.includes(type) ? type : "insightOfDay";
 
   try {
-    const raw = await genText(PROMPTS[safe], "gemini-2.5-flash");
+    const raw = await genText(PROMPTS[safe], { provider: "gemini", model: "gemini-2.5-flash", maxTokens: 800 });
     let parsed: any = null;
     try {
       const cleaned = raw.replace(/^```json\n?/, "").replace(/\n?```$/, "").trim();

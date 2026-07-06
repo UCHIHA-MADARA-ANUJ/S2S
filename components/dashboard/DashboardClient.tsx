@@ -125,9 +125,9 @@ export function DashboardClient({ stats, myData }: { stats: any; myData?: any })
           <Card title="Top Platforms" subtitle="Most used for learning" className="lg:col-span-2">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={stats.platformData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                <XAxis dataKey="name" stroke="#666" fontSize={11} angle={-20} textAnchor="end" height={70} />
-                <YAxis stroke="#666" fontSize={11} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.12)" />
+                <XAxis dataKey="name" stroke="#A1A1AA" fontSize={11} angle={-20} textAnchor="end" height={70} />
+                <YAxis stroke="#A1A1AA" fontSize={11} />
                 <Tooltip contentStyle={{ background: "#0a0a0a", border: "1px solid #FF3D2E" }} />
                 <Bar dataKey="value" fill="#FF3D2E" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -149,7 +149,7 @@ export function DashboardClient({ stats, myData }: { stats: any; myData?: any })
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart data={stats.skillData}>
                 <PolarGrid stroke="rgba(255,255,255,0.1)" />
-                <PolarAngleAxis dataKey="name" stroke="#666" fontSize={10} />
+                <PolarAngleAxis dataKey="name" stroke="#A1A1AA" fontSize={10} />
                 <PolarRadiusAxis stroke="rgba(255,255,255,0.1)" fontSize={10} />
                 <Radar dataKey="value" stroke="#FF3D2E" fill="#FF3D2E" fillOpacity={0.4} />
                 <Tooltip contentStyle={{ background: "#0a0a0a", border: "1px solid #FF3D2E" }} />
@@ -160,9 +160,9 @@ export function DashboardClient({ stats, myData }: { stats: any; myData?: any })
           <Card title="Screen Time Split" subtitle="Average allocation">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={stats.timeData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                <XAxis dataKey="name" stroke="#666" fontSize={11} />
-                <YAxis stroke="#666" fontSize={11} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.12)" />
+                <XAxis dataKey="name" stroke="#A1A1AA" fontSize={11} />
+                <YAxis stroke="#A1A1AA" fontSize={11} />
                 <Tooltip contentStyle={{ background: "#0a0a0a", border: "1px solid #FF3D2E" }} />
                 <Bar dataKey="value" fill="#00E1FF" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -178,9 +178,9 @@ export function DashboardClient({ stats, myData }: { stats: any; myData?: any })
                     <stop offset="95%" stopColor="#FF3D2E" stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-                <XAxis dataKey="age" stroke="#666" fontSize={11} />
-                <YAxis stroke="#666" fontSize={11} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.12)" />
+                <XAxis dataKey="age" stroke="#A1A1AA" fontSize={11} />
+                <YAxis stroke="#A1A1AA" fontSize={11} />
                 <Tooltip contentStyle={{ background: "#0a0a0a", border: "1px solid #FF3D2E" }} />
                 <Area type="monotone" dataKey="count" stroke="#FF3D2E" fill="url(#ageG)" />
               </AreaChart>

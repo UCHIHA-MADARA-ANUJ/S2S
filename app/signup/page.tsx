@@ -7,6 +7,7 @@ import { Mail, Lock, Eye, EyeOff, User, ArrowRight, Loader2, Check, X } from "lu
 import { useAuth } from "@/lib/auth/AuthContext";
 import { toast } from "sonner";
 import { DotField } from "@/components/effects/DotField";
+import { SkillVerseLogo } from "@/components/ui/SkillVerseLogo";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -52,9 +53,8 @@ export default function SignUpPage() {
       >
         <div className="glass-strong p-8 rounded-3xl">
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center font-display font-black text-white group-hover:rotate-12 transition-transform">SV</div>
-              <span className="font-display font-bold text-xl">SkillVerse</span>
+            <Link href="/" className="inline-block mb-6 focus:outline-none">
+              <SkillVerseLogo size="lg" />
             </Link>
             <h1 className="font-display font-black text-3xl mb-2">Create account</h1>
             <p className="text-text-secondary text-sm">Join 250+ students shaping screen time research</p>

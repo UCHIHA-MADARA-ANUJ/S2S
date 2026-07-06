@@ -33,7 +33,7 @@ Format:
 ANSWER: <answer>
 RELATED: <id1>,<id2>`;
 
-    const raw = await genText(prompt, "gemini-2.5-flash-lite");
+    const raw = await genText(prompt, { provider: "openrouter", model: "openai/gpt-4o-mini", maxTokens: 600 });
     const answerMatch = raw.match(/ANSWER:\s*([\s\S]*?)\s*(?:RELATED:|$)/i);
     const relatedMatch = raw.match(/RELATED:\s*([\s\S]*?)$/i);
     const answer = (answerMatch?.[1] || raw.split("\n")[0] || "I couldn't find an answer, but feel free to check the FAQ list below.").trim().slice(0, 600);

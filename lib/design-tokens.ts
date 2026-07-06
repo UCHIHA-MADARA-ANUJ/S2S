@@ -37,16 +37,16 @@ export const SHADOW = {
 export const COLORS = {
   // Match tailwind.config.ts
   background: "#050505",
-  surface: "#0A0A0A",
-  "surface-2": "#111111",
+  surface: "#0D0E12",
+  "surface-2": "#161821",
   primary: "#FF3D2E",
   "primary-light": "#FF6B5C",
   "primary-dark": "#CC2E22",
   secondary: "#FFA800",
   accent: "#00E1FF",
   "text-primary": "#FAFAFA",
-  "text-secondary": "#A1A1A1",
-  "text-muted": "#666666",
+  "text-secondary": "#D1D5DB",
+  "text-muted": "#9CA3AF",
   success: "#10B981",
   warning: "#F59E0B",
   error: "#EF4444"

@@ -16,6 +16,6 @@ Hobby-to-Skill Rate: ${s.hobbyToSkillRate}%
 Avg Creativity: ${s.avgCreativity}/10
 Avg Collaboration: ${s.avgCollaboration}/10
 Top Cities: ${s.cityData?.map(c => c.name).join(", ")}`;
-  const report = await genText(`${REPORT_SYSTEM}\n\nSurvey Data:\n${data}`);
+  const report = await genText(`${REPORT_SYSTEM}\n\nSurvey Data:\n${data}`, { provider: "openrouter", model: "meta-llama/llama-3.3-70b-instruct", maxTokens: 1500 });
   return NextResponse.json({ success: true, report });
 }

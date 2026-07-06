@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
   try {
     const { text, target } = await req.json();
     if (!text) return NextResponse.json({ success: false, error: "No text" }, { status: 400 });
-    const translation = await genText(`${TRANSLATOR_SYSTEM}${target || "Spanish"}\n\nText:\n${text}`);
+    const translation = await genText(`${TRANSLATOR_SYSTEM}${target || "Spanish"}\n\nText:\n${text}`, { provider: "openrouter", model: "qwen/qwen-2.5-7b-instruct", maxTokens: 800 });
     return NextResponse.json({ success: true, translation });
   } catch (e: any) { return NextResponse.json({ success: false, error: e.message }, { status: 500 }); }
 }

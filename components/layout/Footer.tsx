@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE, TEAM } from "@/lib/constants";
 import { Github, Mail, Instagram } from "lucide-react";
+import { SkillVerseLogo } from "@/components/ui/SkillVerseLogo";
 
 export function Footer() {
   return (
@@ -12,7 +13,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <h3 className="text-3xl font-display font-black tracking-tight mb-3">{SITE.name}</h3>
+            <div className="mb-4">
+              <SkillVerseLogo size="lg" />
+            </div>
             <p className="text-text-secondary text-sm max-w-md mb-4">{SITE.tagline}</p>
             <p className="text-text-muted text-xs max-w-md">An AI-powered research platform analyzing how digital platforms help teenagers build real-world skills. Built for {SITE.competition}.</p>
           </div>

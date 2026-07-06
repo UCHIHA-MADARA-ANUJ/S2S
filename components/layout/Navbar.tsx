@@ -7,6 +7,7 @@ import { useAuth } from "@/lib/auth/AuthContext";
 import { useIntroState } from "@/lib/intro-context";
 import { toast } from "sonner";
 import { SITE } from "@/lib/constants";
+import { SkillVerseLogo } from "@/components/ui/SkillVerseLogo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -71,14 +72,8 @@ export function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-2xl border-b border-white/5" : "bg-transparent"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group" aria-label={`${SITE.name} — go to home`}>
-            <div
-              aria-hidden="true"
-              className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center font-display font-black text-white group-hover:rotate-12 transition-transform"
-            >
-              SV
-            </div>
-            <span className="font-display font-bold text-lg hidden sm:inline">{SITE.name}</span>
+          <Link href="/" aria-label={`${SITE.name} — go to home`} className="focus:outline-none">
+            <SkillVerseLogo size="md" />
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1" role="list">
